@@ -1,0 +1,59 @@
+assembly name
+==============
+WithoutHaste.WinForms.???
+	contains object LayoutHelper ???
+	
+related to System.Windows.Forms.dll
+(was called System.WinForms back in version 1.1)
+existing namespaces
+	System.Windows.Forms.Layout
+	System.Windows.Forms.Design
+	
+WithoutHaste.Windows.GUI
+
+confirmed GUI is not a C# object
+
+
+design notes
+=============
+
+a set of chainable methods to collect all the commands
+then a final .Apply(Control)
+
+vocab already used: Layout Position Location
+
+use cases:
+top of parent, full left to right
+left of parent, below toolbar control, top to bottom
+bottom left of parent, with same margin bottom and left, set width and height
+bottom right of parent, with same margin bottom and right, set width and height
+top left of parent, with same margin top and left and right, and same margin between this and lower control
+top left of parent, below toolbar control, left of other panel control, fill remaining space
+
+how might that look?
+
+top of parent, full left to right
+----------------------------------
+LayoutHelper.Top(ParentControl)/*just below all other controls in parent*/ .Left(Parent).Right(Parent).Apply(Control)
+
+left of parent, below toolbar control, top to bottom
+-----------------------------------------------------
+LayoutHelper.Top(ParentControl).Left(ParentControl).Bottom(ParentControl).Width(int).Apply(Control)
+
+bottom left of parent, with same margin bottom and left, set width and height
+------------------------------------------------------------------------------
+LayoutHelper.Bottom(ParentControl, margin).Left(ParentControl, margin).Width(int).Height(int).Apply(Control)
+
+bottom right of parent, with same margin bottom and right, set width and height
+--------------------------------------------------------------------------------
+LayoutHelper.Bottom(ParentControl, margin).Right(ParentControl, margin).Width(int).Height(int).Apply(Control)
+
+top left of parent, with same margin top and left and right, and same margin between this and lower control
+------------------------------------------------------------------------------------------------------------
+LayoutHelper.Top(ParentControl, margin).AbsoluteLeft(ParentControl, margin).AbsoluteRight(ParentControl, margin).Bottom(ParentControl, margin).Apply(Control)
+AbsoluteRight?
+TrueRight?
+ExactRight?
+FixedRight?
+or the other as RelativeRight?
+or the other as FloatRight? same as html float
