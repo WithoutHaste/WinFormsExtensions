@@ -1,9 +1,13 @@
-# WinFormsExtensions
+# WithoutHaste.Windows.GUI
 
-Behavior extensions for C# WinForms (or Windows Forms) framework.
-
-Currently includes a Layout Helper class.
+Behavior extensions for C# Windows Forms framework.
 
 ## Library
 
-Release library at WinFormsExtensions/bin/Release/WinFormsExtensions.dll
+Release library at WithoutHaste.Windows.GUI/bin/Release/WithoutHaste.Windows.GUI.dll.
+
+## Examples of Use
+
+Place a Control at the top of a Form, stretching from one side to the other:
+
+LayoutHelper.

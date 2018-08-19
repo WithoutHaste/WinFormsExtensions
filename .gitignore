@@ -1,3 +1,6 @@
+GUITest/.vs
+GUITest/bin/Debug/*
+GUITest/obj/*
 WinFormsExtensions/.vs
 WinFormsExtensions/bin/Debug/*
 WinFormsExtensions/obj/*

@@ -57,3 +57,6 @@ ExactRight?
 FixedRight?
 or the other as RelativeRight?
 or the other as FloatRight? same as html float
+
+what to call the options type?
+LayoutOptions

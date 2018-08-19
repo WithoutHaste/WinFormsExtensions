@@ -1,0 +1,40 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+
+/* Auto-generated file */
+
+using System;
+using System.Windows.Forms;
+
+namespace WithoutHaste.Windows.GUI
+{
+	public static partial class LayoutHelper
+	{
+<# 
+	IEnumerable<string> layoutOptionsLines = File.ReadLines(this.Host.ResolvePath("LayoutOptions.cs")); 
+	foreach(string fullLine in layoutOptionsLines)
+	{
+		string line = fullLine.Trim();
+		if(!line.StartsWith("public LayoutOptions "))
+			continue;
+
+		string signature = line.Replace("public LayoutOptions ", "");
+		string call = signature;
+		call = call.Replace("int ", "");
+		call = call.Replace("Control ", "");
+#>
+		public static LayoutOptions <#= signature #>
+		{
+			return (new LayoutOptions()).<#= call #>;
+		}
+
+<#
+	}
+#>
+
+<# /* */ #>
+	}
+}

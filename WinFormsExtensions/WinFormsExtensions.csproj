@@ -7,8 +7,8 @@
     <ProjectGuid>{1F15F94C-7A94-4B31-9170-E30A8BBF9E82}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinFormsExtensions</RootNamespace>
-    <AssemblyName>WinFormsExtensions</AssemblyName>
+    <RootNamespace>WithoutHaste.Windows.GUI</RootNamespace>
+    <AssemblyName>WithoutHaste.Windows.GUI</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,7 +43,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LayoutHelper.cs" />
+    <Compile Include="LayoutHelper_LayoutOptions.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LayoutHelper_LayoutOptions.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LayoutHelper_LayoutOptions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LayoutHelper_LayoutOptions.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

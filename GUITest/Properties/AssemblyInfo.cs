@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WithoutHaste.Windows.GUI")]
-[assembly: AssemblyDescription("Layout extensions for Systems.Windows.Forms.")]
+[assembly: AssemblyTitle("GUITest")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Without Haste, LLC")]
-[assembly: AssemblyProduct("WithoutHaste.Windows.GUI")]
-[assembly: AssemblyCopyright("Copyright © 2018 Without Haste, LLC")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("GUITest")]
+[assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1f15f94c-7a94-4b31-9170-e30a8bbf9e82")]
+[assembly: Guid("9dd55d84-3d95-4ee0-abbc-65fdc8fb3f05")]
 
 // Version information for an assembly consists of the following four values:
 //
