@@ -6,8 +6,12 @@ Behavior extensions for C# Windows Forms framework.
 
 Release library at WithoutHaste.Windows.GUI/bin/Release/WithoutHaste.Windows.GUI.dll.
 
-## Examples of Use
+## LayoutHelper
+
+### Examples
 
 Place a Control at the top of a Form, stretching from one side to the other:
 
-LayoutHelper.
+`LayoutHelper.Top(form).Left(form).Right(form).Height(25).Apply(control);`
+
+
