@@ -18,17 +18,14 @@ Syntax example: `LayoutHelper.Top(form).Left(form).Right(form).Height(25).Apply(
 
 ### Location relative to parent control
 
-| Place control at the inner edge of the parent |
-|-------------------|---------------------------|
-| Top(parent)		| Top(parent, margin)		|
-| Bottom(parent)	| Bottom(parent, margin)	|
-| Left(parent)		| Left(parent, margin)		|
-| Right(parent)		| Right(parent, margin)		|
+Place control at the inner edge of the parent:  
+`Top(parent)` `Top(parent, margin)`  
+`Bottom(parent)` `Bottom(parent, margin)`  
+`Left(parent)` `Left(parent, margin)`  
+`Right(parent)` `Right(parent, margin)`
 
-| Float control towards an inner edge of the parent, until it hits a previously placed control |
-|-----------------------|-------------------------------|
-| FloatTop(parent)		| FloatTop(parent, margin)		|
-| FloatBottom(parent)	| FloatBottom(parent, margin)	|
-| FloatLeft(parent)		| FloatLeft(parent, margin)		|
-| FloatRight(parent)	| FloatRight(parent, margin)	|
-(works like HTML float)
+Float control towards an inner edge of the parent, until it runs into a previously placed control:  
+`FloatTop(parent)` `FloatTop(parent, margin)`  
+`FloatBottom(parent)` `FloatBottom(parent, margin)`  
+`FloatLeft(parent)` `FloatLeft(parent, margin)`  
+`FloatRight(parent)` `FloatRight(parent, margin)`  
