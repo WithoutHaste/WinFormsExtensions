@@ -38,17 +38,26 @@ namespace WithoutHaste.Windows.GUI
 		public Control TopReference { get; protected set; }
 		public PositionType TopPosition { get; protected set; }
 		public int TopMargin { get; protected set; }
+
 		public Control BottomReference { get; protected set; }
 		public PositionType BottomPosition { get; protected set; }
 		public int BottomMargin { get; protected set; }
+
 		public Control LeftReference { get; protected set; }
 		public PositionType LeftPosition { get; protected set; }
 		public int LeftMargin { get; protected set; }
+
 		public Control RightReference { get; protected set; }
 		public PositionType RightPosition { get; protected set; }
 		public int RightMargin { get; protected set; }
+
+		public Control WidthReference { get; protected set; }
 		public int? WidthMeasure { get; protected set; }
+		public bool WidthCentered { get; protected set; }
+
+		public Control HeightReference { get; protected set; }
 		public int? HeightMeasure { get; protected set; }
+		public bool HeightCentered { get; protected set; }
 
 		public LayoutOptions()
 		{
@@ -276,13 +285,33 @@ namespace WithoutHaste.Windows.GUI
 
 		public LayoutOptions Width(int width)
 		{
+			WidthReference = null;
 			WidthMeasure = width;
+			WidthCentered = false;
+			return this;
+		}
+
+		public LayoutOptions CenterWidth(Control reference, int width)
+		{
+			WidthReference = reference;
+			WidthMeasure = width;
+			WidthCentered = true;
 			return this;
 		}
 
 		public LayoutOptions Height(int height)
 		{
+			WidthReference = null;
 			HeightMeasure = height;
+			WidthCentered = false;
+			return this;
+		}
+
+		public LayoutOptions CenterHeight(Control reference, int height)
+		{
+			WidthReference = reference;
+			HeightMeasure = height;
+			WidthCentered = true;
 			return this;
 		}
 
@@ -403,6 +432,15 @@ namespace WithoutHaste.Windows.GUI
 			}
 			if(width < 0) throw new Exception("Width cannot be negative. "+width); //todo specific
 			if(height < 0) throw new Exception("Height cannot be negative. "+height); //todo specific
+
+			if(WidthCentered)
+			{
+				x = (WidthReference.ClientSize.Width / 2) - (width / 2);
+			}
+			if(HeightCentered)
+			{
+				y = (HeightReference.ClientSize.Height / 2) - (height / 2);
+			}
 
 			control.Location = new Point(x, y);
 			control.Size = new Size(width, height);

@@ -173,9 +173,19 @@ namespace WithoutHaste.Windows.GUI
 			return (new LayoutOptions()).Width(width);
 		}
 
+		public static LayoutOptions CenterWidth(Control reference, int width)
+		{
+			return (new LayoutOptions()).CenterWidth(reference, width);
+		}
+
 		public static LayoutOptions Height(int height)
 		{
 			return (new LayoutOptions()).Height(height);
+		}
+
+		public static LayoutOptions CenterHeight(Control reference, int height)
+		{
+			return (new LayoutOptions()).CenterHeight(reference, height);
 		}
 
 
