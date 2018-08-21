@@ -43,3 +43,13 @@ Place control edge directly next to a sibling control:
 `Above(sibling)` `Above(sibling, margin)`  
 `RightOf(sibling)` `RightOf(sibling, margin)`  
 `LeftOf(sibling)` `LeftOf(sibling, margin)`  
+
+### Absolute size
+
+Set size:  
+`Width(width)`  
+`Height(height)`  
+
+Set size and center control in parent:  
+`CenterWidth(parent, width)`  
+`CenterHeight(parent, height)`  
