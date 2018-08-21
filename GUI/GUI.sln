@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsExtensions", "WinFormsExtensions.csproj", "{1F15F94C-7A94-4B31-9170-E30A8BBF9E82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI.csproj", "{1F15F94C-7A94-4B31-9170-E30A8BBF9E82}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUITest", "..\GUITest\GUITest.csproj", "{9DD55D84-3D95-4EE0-ABBC-65FDC8FB3F05}"
 EndProject
