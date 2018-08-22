@@ -283,6 +283,24 @@ namespace WithoutHaste.Windows.GUI
 			RightMargin = margin;
 		}
 
+		public LayoutOptions Fill(Control reference)
+		{
+			SetTop(reference, PositionType.InAbsolute, 0);
+			SetBottom(reference, PositionType.InAbsolute, 0);
+			SetLeft(reference, PositionType.InAbsolute, 0);
+			SetRight(reference, PositionType.InAbsolute, 0);
+			return this;
+		}
+
+		public LayoutOptions Fill(Control reference, int margin)
+		{
+			SetTop(reference, PositionType.InAbsolute, margin);
+			SetBottom(reference, PositionType.InAbsolute, margin);
+			SetLeft(reference, PositionType.InAbsolute, margin);
+			SetRight(reference, PositionType.InAbsolute, margin);
+			return this;
+		}
+
 		public LayoutOptions Width(int width)
 		{
 			WidthReference = null;

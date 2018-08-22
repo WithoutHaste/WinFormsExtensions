@@ -168,6 +168,16 @@ namespace WithoutHaste.Windows.GUI
 			return (new LayoutOptions()).LeftOf(reference);
 		}
 
+		public static LayoutOptions Fill(Control reference)
+		{
+			return (new LayoutOptions()).Fill(reference);
+		}
+
+		public static LayoutOptions Fill(Control reference, int margin)
+		{
+			return (new LayoutOptions()).Fill(reference, margin);
+		}
+
 		public static LayoutOptions Width(int width)
 		{
 			return (new LayoutOptions()).Width(width);
