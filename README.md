@@ -53,3 +53,26 @@ Set size:
 Set size and center control in parent:  
 `CenterWidth(parent, width)`  
 `CenterHeight(parent, height)`  
+
+## History
+
+Data structure for managing redo/undo operations.
+
+### History Class
+
+Create one instance of a `History` for your application.
+
+Methods:  
+`void Add(IHistoryAction)`  
+`IHistoryAction Undo()`  
+`IHistoryAction Redo()`
+
+### IHistoryAction Interface
+
+Create a class inheriting `IHistoryAction` for each action in your application.
+
+As actions occur, add them to the `History`.
+
+### HistoryActionGroup Class
+
+Use `HistoryActionGroup` to save actions that must be undone/redone as a set.

@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="History.cs" />
+    <Compile Include="HistoryActionGroup.cs" />
+    <Compile Include="IHistoryAction.cs" />
     <Compile Include="LayoutHelper.cs" />
     <Compile Include="LayoutHelper_LayoutOptions.cs">
       <AutoGen>True</AutoGen>
