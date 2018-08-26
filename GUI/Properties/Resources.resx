@@ -127,4 +127,16 @@
   <data name="ICON_UNDO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ICON_UNDO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ICON_ZOOM_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_ZOOM_100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_ZOOM_FIT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_ZOOM_FIT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_ZOOM_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_ZOOM_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ICON_ZOOM_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICON_ZOOM_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

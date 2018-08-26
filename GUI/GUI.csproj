@@ -90,6 +90,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ICON_ZOOM_100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ICON_ZOOM_FIT.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ICON_ZOOM_OUT.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ICON_ZOOM_IN.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\ICON_UNDO.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
