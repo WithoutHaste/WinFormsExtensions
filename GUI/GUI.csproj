@@ -54,6 +54,7 @@
     <Compile Include="Controls\EditPaletteDialog.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Controls\Events\ColorEventArgs.cs" />
     <Compile Include="Controls\Events\PaletteEventArgs.cs" />
     <Compile Include="Controls\HistoryActions\AddPaletteColorAction.cs" />
     <Compile Include="Controls\HistoryActions\RemovePaletteColorAction.cs" />

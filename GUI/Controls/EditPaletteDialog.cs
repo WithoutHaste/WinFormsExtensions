@@ -13,7 +13,7 @@ namespace WithoutHaste.Windows.GUI
 	{
 		private string fullFilename;
 		private ColorPalette colorPalette;
-		private ColorPalettePanel swatchPanel;
+		private ColorPalettePanel colorPalettePanel;
 		private ColorDataPanel colorDataPanel;
 		private bool editedSinceSave;
 		private History history;
@@ -74,14 +74,15 @@ namespace WithoutHaste.Windows.GUI
 			colorDataPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
 			this.Controls.Add(colorDataPanel);
 
-			swatchPanel = new ColorPalettePanel(colorPalette, Color_OnSelect, colorContextMenu);
-			LayoutHelper.Left(this, margin).Below(toolStrip).LeftOf(colorDataPanel).Above(addButton, margin).Apply(swatchPanel);
-			swatchPanel.Anchor = LayoutHelper.AnchorAll;
+			colorPalettePanel = new ColorPalettePanel(colorPalette, colorContextMenu);
+			colorPalettePanel.ColorChanged += new EventHandler(Color_OnSelect);
+			LayoutHelper.Left(this, margin).Below(toolStrip).LeftOf(colorDataPanel).Above(addButton, margin).Apply(colorPalettePanel);
+			colorPalettePanel.Anchor = LayoutHelper.AnchorAll;
 			UpdateColorData();
-			this.Controls.Add(swatchPanel);
+			this.Controls.Add(colorPalettePanel);
 
 			Button okButton = new Button();
-			LayoutHelper.Bottom(this, margin).MatchRight(swatchPanel, margin).Height(25).Width(80).Apply(okButton);
+			LayoutHelper.Bottom(this, margin).MatchRight(colorPalettePanel, margin).Height(25).Width(80).Apply(okButton);
 			okButton.Text = "Done";
 			okButton.Anchor = AnchorStyles.Right | AnchorStyles.Bottom;
 			okButton.Click += new EventHandler(Form_OnDone);
@@ -286,27 +287,27 @@ namespace WithoutHaste.Windows.GUI
 		private void AddColorToPalette(Color color, int index)
 		{
 			colorPalette.Insert(color, index);
-			swatchPanel.DisplayColors(colorPalette);
+			colorPalettePanel.DisplayColors(colorPalette);
 			editedSinceSave = true;
 		}
 
 		private void RemoveColorFromPalette(int index)
 		{
 			colorPalette.RemoveAt(index);
-			swatchPanel.DisplayColors(colorPalette);
+			colorPalettePanel.DisplayColors(colorPalette);
 			editedSinceSave = true;
 		}
 
 		private void ReplaceColorInPalette(int index, Color newColor)
 		{
 			colorPalette.ReplaceAt(index, newColor);
-			swatchPanel.DisplayColors(colorPalette);
+			colorPalettePanel.DisplayColors(colorPalette);
 			editedSinceSave = true;
 		}
 
 		private void UpdateColorData()
 		{
-			colorDataPanel.Color = swatchPanel.SelectedColor;
+			colorDataPanel.Color = colorPalettePanel.SelectedColor;
 		}
 
 		private void ResetHistory()

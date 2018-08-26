@@ -9,7 +9,7 @@ using WithoutHaste.Drawing.Colors;
 
 namespace WithoutHaste.Windows.GUI
 {
-	public class ColorDataPanel : Panel
+	internal class ColorDataPanel : Panel
 	{
 		private Color? color;
 		public Color? Color {
@@ -24,8 +24,7 @@ namespace WithoutHaste.Windows.GUI
 
 		public bool IgnoreChanges { get; set; }
 
-		public delegate void OnColorChange(Color color);
-		public OnColorChange ColorChangeFunc;
+		public event ColorEventHandler ColorChanged;
 
 		private TextBox hexadecimalData;
 		private TextBox rgbData;
@@ -175,9 +174,9 @@ namespace WithoutHaste.Windows.GUI
 			if(success)
 			{
 				Color = newColor;
-				if(ColorChangeFunc != null)
+				if(ColorChanged != null)
 				{
-					ColorChangeFunc(newColor);
+					ColorChanged(this, new ColorEventArgs(newColor));
 				}
 			}
 			else

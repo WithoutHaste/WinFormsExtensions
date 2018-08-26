@@ -15,8 +15,9 @@ namespace WithoutHaste.Windows.GUI
 		public static readonly int SWATCH_WIDTH = 25;
 
 		private Color? selectedColor = null;
-		private EventHandler onClickColor;
 		private ContextMenu colorContextMenu;
+
+		public event EventHandler ColorChanged;
 
 		public Color? SelectedColor {
 			get {
@@ -29,16 +30,9 @@ namespace WithoutHaste.Windows.GUI
 			Init();
 		}
 
-		public ColorPalettePanel(EventHandler onClickColor)
+		public ColorPalettePanel(ColorPalette colorPalette, ContextMenu colorContextMenu = null)
 		{
 			Init();
-			this.onClickColor = onClickColor;
-		}
-
-		public ColorPalettePanel(ColorPalette colorPalette, EventHandler onClickColor = null, ContextMenu colorContextMenu = null)
-		{
-			Init();
-			this.onClickColor = onClickColor;
 			this.colorContextMenu = colorContextMenu;
 			DisplayColors(colorPalette);
 		}
@@ -79,10 +73,6 @@ namespace WithoutHaste.Windows.GUI
 				{
 					colorPanel.ContextMenu = colorContextMenu;
 				}
-				if(onClickColor != null)
-				{
-					colorPanel.Click += new EventHandler(onClickColor);
-				}
 				this.Controls.Add(colorPanel);
 				count++;
 			}
@@ -103,6 +93,10 @@ namespace WithoutHaste.Windows.GUI
 				{
 					child.BackgroundImage = null;
 				}
+			}
+			if(ColorChanged != null)
+			{
+				ColorChanged(this, new EventArgs());
 			}
 		}
 	}

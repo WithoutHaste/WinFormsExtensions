@@ -31,7 +31,7 @@ namespace WithoutHaste.Windows.GUI
 			}
 		}
 
-		public EventHandler OnColorChange { get; set; }
+		public event EventHandler ColorChanged;
 
 		public HuePanel(Color? startColor = null)
 		{
@@ -74,9 +74,10 @@ namespace WithoutHaste.Windows.GUI
 
 		private void TrackBar_OnValueChanged(object sender, EventArgs e)
 		{
-			if(OnColorChange == null)
-				return;
-			OnColorChange(this, new EventArgs());
+			if(ColorChanged != null)
+			{
+				ColorChanged(this, new EventArgs());
+			}
 		}
 	}
 }

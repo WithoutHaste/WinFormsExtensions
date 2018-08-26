@@ -35,7 +35,7 @@ namespace WithoutHaste.Windows.GUI
 
 			huePanel = new HuePanel(Color);
 			huePanel.Location = new Point(margin, margin);
-			huePanel.OnColorChange = Hue_OnChange;
+			huePanel.ColorChanged += new EventHandler(Hue_OnChange);
 			this.Controls.Add(huePanel);
 
 			saturationValuePanel = new SaturationValuePanel(Color);
@@ -58,7 +58,7 @@ namespace WithoutHaste.Windows.GUI
 			colorDataPanel = new ColorDataPanel(readOnly: false);
 			LayoutHelper.Above(okButton, margin).Right(this, margin).Below(huePanel).Width(150).Apply(colorDataPanel);
 			colorDataPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-			colorDataPanel.ColorChangeFunc = new ColorDataPanel.OnColorChange(ColorData_OnChange);
+			colorDataPanel.ColorChanged += new ColorEventHandler(ColorData_OnChange);
 			this.Controls.Add(colorDataPanel);
 
 			selectedColorPanel = new Panel();
@@ -90,14 +90,14 @@ namespace WithoutHaste.Windows.GUI
 			UpdateSelectedColor();
 		}
 
-		private void ColorData_OnChange(Color color)
+		private void ColorData_OnChange(object sender, ColorEventArgs e)
 		{
 			colorDataPanel.IgnoreChanges = true;
 
-			Color = color;
-			selectedColorPanel.BackColor = color;
-			huePanel.Color = color;
-			saturationValuePanel.Color = color;
+			Color = e.Color;
+			selectedColorPanel.BackColor = e.Color;
+			huePanel.Color = e.Color;
+			saturationValuePanel.Color = e.Color;
 
 			colorDataPanel.IgnoreChanges = false;
 		}
