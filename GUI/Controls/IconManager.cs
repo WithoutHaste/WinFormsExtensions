@@ -19,6 +19,7 @@ namespace WithoutHaste.Windows.GUI
 		public static Image ZOOM_OUT { get { return Singleton.icon_zoom_out; } }
 		public static Image ZOOM_FIT { get { return Singleton.icon_zoom_fit; } }
 		public static Image ZOOM_100 { get { return Singleton.icon_zoom_100; } }
+		public static Image DROPPER { get { return Singleton.icon_dropper; } }
 
 		private Image icon_redo;
 		private Image icon_undo;
@@ -27,6 +28,7 @@ namespace WithoutHaste.Windows.GUI
 		private Image icon_zoom_out;
 		private Image icon_zoom_fit;
 		private Image icon_zoom_100;
+		private Image icon_dropper;
 
 		private static IconManager singleton;
 		public static IconManager Singleton {
@@ -48,6 +50,7 @@ namespace WithoutHaste.Windows.GUI
 			icon_zoom_out = WithoutHaste.Windows.GUI.Properties.Resources.ICON_ZOOM_OUT;
 			icon_zoom_fit = WithoutHaste.Windows.GUI.Properties.Resources.ICON_ZOOM_FIT;
 			icon_zoom_100 = WithoutHaste.Windows.GUI.Properties.Resources.ICON_ZOOM_100;
+			icon_dropper = WithoutHaste.Windows.GUI.Properties.Resources.ICON_DROPPER;
 		}
 	}
 }

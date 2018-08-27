@@ -91,6 +91,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ICON_DROPPER.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\ICON_ZOOM_100.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
