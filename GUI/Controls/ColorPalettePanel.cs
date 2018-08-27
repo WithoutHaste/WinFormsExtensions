@@ -14,14 +14,26 @@ namespace WithoutHaste.Windows.GUI
 		public static readonly int SCROLLBAR_WIDTH = System.Windows.Forms.SystemInformation.VerticalScrollBarWidth + 5;
 		public static readonly int SWATCH_WIDTH = 25;
 
-		private Color? selectedColor = null;
 		private ContextMenu colorContextMenu;
 
 		public event EventHandler ColorChanged;
 
+		private Color? selectedColor = null;
 		public Color? SelectedColor {
 			get {
 				return selectedColor;
+			}
+			set {
+				if(value == null)
+				{
+					selectedColor = null;
+					UpdateDisplay();
+				}
+				else if(ColorIsInPalette(value.Value))
+				{
+					selectedColor = value;
+					UpdateDisplay();
+				}
 			}
 		}
 
@@ -80,24 +92,47 @@ namespace WithoutHaste.Windows.GUI
 			this.ResumeLayout();
 		}
 
-		public void Color_OnClick(object sender, EventArgs e)
+		private void Color_OnClick(object sender, EventArgs e)
 		{
 			selectedColor = (sender as Panel).BackColor;
+			UpdateDisplay();
+			if(ColorChanged != null)
+			{
+				ColorChanged(this, new EventArgs());
+			}
+		}
+
+		private void UpdateDisplay()
+		{
+			Control selectedControl = null;
 			foreach(Control child in this.Controls)
 			{
 				if(child.BackColor == selectedColor)
 				{
 					child.BackgroundImage = IconManager.SWATCH_SELECTOR;
+					selectedControl = child;
 				}
 				else
 				{
 					child.BackgroundImage = null;
 				}
 			}
-			if(ColorChanged != null)
+			if(selectedControl != null)
 			{
-				ColorChanged(this, new EventArgs());
+				this.ScrollControlIntoView(selectedControl);
 			}
+		}
+
+		private bool ColorIsInPalette(Color color)
+		{
+			foreach(Control child in this.Controls)
+			{
+				if(child.BackColor == selectedColor)
+				{
+					return true;
+				}
+			}
+			return false;
 		}
 	}
 }
