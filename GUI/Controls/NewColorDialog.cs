@@ -104,7 +104,7 @@ namespace WithoutHaste.Windows.GUI
 
 		private void UpdateSelectedColor()
 		{
-			Color = ConvertColors.ColorFromHSV(new HSV(huePanel.Hue, saturationValuePanel.Saturation / 100f, saturationValuePanel.Value / 100f));
+			Color = ConvertColors.ToColor(new HSV(huePanel.Hue, saturationValuePanel.Saturation / 100f, saturationValuePanel.Value / 100f));
 			selectedColorPanel.BackColor = Color;
 			colorDataPanel.Color = Color;
 		}

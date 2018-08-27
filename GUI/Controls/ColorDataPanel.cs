@@ -98,9 +98,9 @@ namespace WithoutHaste.Windows.GUI
 				return;
 			}
 
-			SetTextWithoutEvent(hexadecimalData, ConvertColors.HexadecimalFromColor(color.Value));
+			SetTextWithoutEvent(hexadecimalData, ConvertColors.ToHexadecimal(color.Value));
 			SetTextWithoutEvent(rgbData, String.Format("({0}, {1}, {2})", color.Value.R, color.Value.G, color.Value.B));
-			HSV hsv = ConvertColors.HSVFromColor(color.Value);
+			HSV hsv = ConvertColors.ToHSV(color.Value);
 			SetTextWithoutEvent(hsvData, String.Format("({0:0.####}, {1:0.####}, {2:0.####})", hsv.Hue, hsv.Saturation, hsv.Value));
 
 			if(!hexadecimalData.ReadOnly)

@@ -40,7 +40,7 @@ namespace WithoutHaste.Windows.GUI
 
 		public Color Color {
 			set {
-				HSV hsv = ConvertColors.HSVFromColor(value);
+				HSV hsv = ConvertColors.ToHSV(value);
 				Saturation = (int)(hsv.Saturation * 100);
 				Value = (int)(hsv.Value * 100);
 			}
@@ -89,7 +89,7 @@ namespace WithoutHaste.Windows.GUI
 
 			if(startColor.HasValue)
 			{
-				HSV hsv = ConvertColors.HSVFromColor(startColor.Value);
+				HSV hsv = ConvertColors.ToHSV(startColor.Value);
 				Hue = (int)hsv.Hue;
 				Saturation = (int)(hsv.Saturation * 100);
 				Value = (int)(hsv.Value * 100);

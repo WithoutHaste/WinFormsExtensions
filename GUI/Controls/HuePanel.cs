@@ -27,7 +27,7 @@ namespace WithoutHaste.Windows.GUI
 
 		public Color Color {
 			set {
-				Hue = (int)ConvertColors.HSVFromColor(value).Hue;
+				Hue = (int)ConvertColors.ToHSV(value).Hue;
 			}
 		}
 
@@ -54,21 +54,21 @@ namespace WithoutHaste.Windows.GUI
 				Panel colorPanel = new Panel();
 				colorPanel.Location = new Point(hue * swatchWidth, swatchY);
 				colorPanel.Size = new Size(swatchWidth, this.Height);
-				colorPanel.BackColor = ConvertColors.ColorFromHSV(new HSV(hue, 1, 1));
+				colorPanel.BackColor = ConvertColors.ToColor(new HSV(hue, 1, 1));
 				colorPanel.Click += new EventHandler(Color_OnClick);
 				this.Controls.Add(colorPanel);
 			}
 
 			if(startColor.HasValue)
 			{
-				Hue = (int)ConvertColors.HSVFromColor(startColor.Value).Hue;
+				Hue = (int)ConvertColors.ToHSV(startColor.Value).Hue;
 			}
 		}
 
 		private void Color_OnClick(object sender, EventArgs e)
 		{
 			Panel panel = sender as Panel;
-			HSV hsv = ConvertColors.HSVFromColor(panel.BackColor);
+			HSV hsv = ConvertColors.ToHSV(panel.BackColor);
 			Hue = (int)hsv.Hue;
 		}
 

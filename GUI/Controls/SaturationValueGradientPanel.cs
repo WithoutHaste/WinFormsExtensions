@@ -60,7 +60,7 @@ namespace WithoutHaste.Windows.GUI
 		{
 			Point clickPoint = this.PointToClient(new Point(MousePosition.X, MousePosition.Y));
 			Color color = graphicsBitmap.GetPixel(clickPoint.X, clickPoint.Y);
-			HSV hsv = ConvertColors.HSVFromColor(color);
+			HSV hsv = ConvertColors.ToHSV(color);
 			saturation = (int)(100 * hsv.Saturation);
 			_value = (int)(100 * hsv.Value);
 			if(ColorChanged != null)
@@ -79,7 +79,7 @@ namespace WithoutHaste.Windows.GUI
 					for(int value = 0; value <= 100; value++)
 					{
 						int reverseValue = 100 - value;
-						Color color = ConvertColors.ColorFromHSV(new HSV(hue, saturation / 100f, reverseValue / 100f));
+						Color color = ConvertColors.ToColor(new HSV(hue, saturation / 100f, reverseValue / 100f));
 						SolidBrush brush = new SolidBrush(color);
 						gBitmap.FillRectangle(brush, new Rectangle(saturation * swatchWidth, value * swatchWidth, swatchWidth, swatchWidth));
 					}
