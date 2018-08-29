@@ -26,13 +26,13 @@ This dialog presents several ways of selecting a color:
 
 ## Properties
 
-`Color`: the selected color
+`System.Drawing.Color Color`: the selected color
 
 ## Constructors
 
 Parameterless: `new NewColorDialog();`  
 Select a color, starting with black.
 
-Existing file: `new NewColorDialog(System.Drawing.Color);`  
+Existing color: `new NewColorDialog(System.Drawing.Color);`  
 Select a color, starting with the specified color.
 

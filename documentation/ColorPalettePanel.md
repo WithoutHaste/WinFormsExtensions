@@ -10,7 +10,7 @@ System.Drawing.dll
 
 ## Usage
 
-ColorPalettePanel is derived from `System.Windows.Forms.FlowLayoutPanel`.
+`ColorPalettePanel` is derived from `System.Windows.Forms.FlowLayoutPanel`.
 
 ```
 ColorPalettePanel panel = new ColorPalettePanel() {
@@ -44,13 +44,13 @@ Parameterless: `new ColorPalettePanel()`
 Create an empty panel.
 
 Open file: `new ColorPalettePanel(ColorPalette, ContextMenu = null)`  
-Open an existing color palette file and display it. See the `Colors.dll` documentation for supported file formats.  
+Display an existing `ColorPalette`.
 Optional: specify a `ContextMenu` to be used for each color swatch.
 
 ## Methods
 
 ### DisplayColors
 
-Display a specific `ColorPalette`.
+Display a different `ColorPalette`.
 
 `panel.DisplayColors(ColorPalette);`
