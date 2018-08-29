@@ -1,12 +1,13 @@
 # LayoutHelper
 
-Helper for placing and sizing controls in a Form.
+Helper for placing and sizing controls in a Form relative to each other.
 
-Chain location and size directions together, then apply the layout to a control.
+Uses method chaining for a fluent writing style. Location and sizing methods can be chained in any order. `Apply` must be the last command.
 
-Location and size methods can be chained in any order. `Apply(Control)` must be the last command. Add the control to its parent after using LayoutHelper.
+Add the control to its parent after using `LayoutHelper`.
 
-Syntax example: `LayoutHelper.Top(form).Left(form).Right(form).Height(25).Apply(control);`
+Syntax example:  
+`LayoutHelper.Below(toolStrip).MatchLeft(otherControl).Right(form).Height(25).Apply(control);`
 
 ## Location/Size relative to parent control
 
@@ -15,6 +16,7 @@ Place control edge at the inner edge of the parent:
 `Bottom(parent)` `Bottom(parent, margin)`  
 `Left(parent)` `Left(parent, margin)`  
 `Right(parent)` `Right(parent, margin)`
+`Fill(parent)` `Fill(parent, margin)`
 
 Float control edge towards an inner edge of the parent, until it runs into a previously placed control:  
 `FloatTop(parent)` `FloatTop(parent, margin)`  
