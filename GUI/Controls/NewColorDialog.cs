@@ -18,13 +18,20 @@ namespace WithoutHaste.Windows.GUI
 
 		public Color Color { get; protected set; }
 
-		public NewColorDialog(Color? startColor = null)
+		public NewColorDialog()
+		{
+			Init();
+		}
+
+		public NewColorDialog(Color color)
+		{
+			Color = color;
+			Init();
+		}
+
+		private void Init()
 		{
 			int margin = 10;
-			if(startColor.HasValue)
-			{
-				Color = startColor.Value;
-			}
 
 			this.Width = (HuePanel.UNIT + margin + margin/*why second margin needed?*/) * 2;
 			this.Height = 500 + margin;

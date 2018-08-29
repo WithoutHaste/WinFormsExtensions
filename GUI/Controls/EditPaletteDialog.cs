@@ -24,17 +24,24 @@ namespace WithoutHaste.Windows.GUI
 			}
 		}
 
+		public EditPaletteDialog()
+		{
+			this.colorPalette = new ColorPalette();
+			Init();
+		}
+
 		public EditPaletteDialog(string fullFilename)
 		{
-			this.fullFilename = fullFilename;
 			if(fullFilename == null)
-			{
-				this.colorPalette = new ColorPalette();
-			}
-			else
-			{
-				this.colorPalette = WithoutHaste.Drawing.Colors.ColorPalette.Load(fullFilename);
-			}
+				throw new ArgumentException("Filename cannot be null.");
+
+			this.fullFilename = fullFilename;
+			this.colorPalette = WithoutHaste.Drawing.Colors.ColorPalette.Load(fullFilename);
+			Init();
+		}
+
+		private void Init()
+		{
 			this.editedSinceSave = false;
 
 			this.Width = 650;
@@ -42,12 +49,12 @@ namespace WithoutHaste.Windows.GUI
 			this.Text = "Edit Palette";
 			this.FormClosing += new FormClosingEventHandler(Form_OnClosing);
 
-			Init();
+			InitControls();
 			InitMenus();
 			InitHistory();
 		}
 
-		private void Init()
+		private void InitControls()
 		{
 			int margin = 10;
 
