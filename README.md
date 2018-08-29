@@ -6,7 +6,7 @@ A C# library for Windows Forms extensions.
 
 This library is under active development. Report bugs and request features on Github, or to wohaste@gmail.com.
 
-## Library
+## Download
 
 Release library at WithoutHaste.Windows.GUI/bin/Release/WithoutHaste.Windows.GUI.dll.
 
