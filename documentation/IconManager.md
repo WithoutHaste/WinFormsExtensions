@@ -1,6 +1,6 @@
 # IconManager
 
-Mostly standard application icons, all supplied as Images.
+Standard application icons, supplied as System.Drawing.Image.
 
 ## Requirements
 
@@ -22,4 +22,4 @@ System.Drawing.dll
 ### Other
 
 `IconManager.ZOOM_100`: rounded rectangle  
-`IconManager.SWATCH_SELECTOR`: palette swatch selector  
+`IconManager.SWATCH_SELECTOR`: black and white square  
