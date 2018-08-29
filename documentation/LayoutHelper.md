@@ -15,8 +15,8 @@ Place control edge at the inner edge of the parent:
 `Top(parent)` `Top(parent, margin)`  
 `Bottom(parent)` `Bottom(parent, margin)`  
 `Left(parent)` `Left(parent, margin)`  
-`Right(parent)` `Right(parent, margin)`
-`Fill(parent)` `Fill(parent, margin)`
+`Right(parent)` `Right(parent, margin)`  
+`Fill(parent)` `Fill(parent, margin)`  
 
 Float control edge towards an inner edge of the parent, until it runs into a previously placed control:  
 `FloatTop(parent)` `FloatTop(parent, margin)`  
@@ -30,7 +30,7 @@ Place control edge at the same location as a sibling control:
 `MatchTop(sibling)` `MatchTop(sibling, margin)`  
 `MatchBottom(sibling)` `MatchBottom(sibling, margin)`  
 `MatchLeft(sibling)` `MatchLeft(sibling, margin)`  
-`MatchRight(sibling)` `MatchRight(sibling, margin)`
+`MatchRight(sibling)` `MatchRight(sibling, margin)`  
 
 Place control edge directly next to a sibling control:  
 `Below(sibling)` `Below(sibling, margin)`  
