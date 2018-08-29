@@ -12,13 +12,13 @@ Release library at WithoutHaste.Windows.GUI/bin/Release/WithoutHaste.Windows.GUI
 
 ## Contents
 
-[LayoutHelper: extensions for setting relative location and size of Controls](documentation/LayoutHelper.md)
+[LayoutHelper](documentation/LayoutHelper.md): extensions for setting relative location and size of Controls
 
-[History: undo/redo management](documentation/History.md)
+[History](documentation/History.md): undo/redo management
 
-[Controls: custom Windows Forms controls](documentation/Controls.md)
+[Controls](documentation/Controls.md): custom Windows Forms controls
 
-[IconManager: access to standard Form icons](documentation/IconManager.md)
+[IconManager](documentation/IconManager.md): access to standard Form icons
 
 ## Versions
 
