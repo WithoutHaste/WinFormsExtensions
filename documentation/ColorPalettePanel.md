@@ -44,7 +44,7 @@ Parameterless: `new ColorPalettePanel()`
 Create an empty panel.
 
 Open file: `new ColorPalettePanel(ColorPalette, ContextMenu = null)`  
-Display an existing `ColorPalette`.
+Display an existing `ColorPalette`.  
 Optional: specify a `ContextMenu` to be used for each color swatch.
 
 ## Methods
