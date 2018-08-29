@@ -20,6 +20,17 @@ Release library at WithoutHaste.Windows.GUI/bin/Release/WithoutHaste.Windows.GUI
 
 [IconManager](documentation/IconManager.md): access to standard Form icons
 
+## Related Projects
+
+Other C# libraries:  
+
+[WithoutHaste.Drawing.Colors](https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors):  
+- load and save color palette files
+- convert between color spaces
+
+[WithoutHaste.Drawing.Shapes](https://github.com/WithoutHaste/WithoutHaste.Drawing.Shapes):  
+- shape/geometry calculations and operations
+
 ## Versions
 
 Version 1 in development.
