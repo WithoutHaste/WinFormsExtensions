@@ -9,16 +9,36 @@ using WithoutHaste.Drawing.Colors;
 
 namespace WithoutHaste.Windows.GUI
 {
+	/// <summary>
+	/// Control for displaying a <see cref="WithoutHaste.Drawing.Color.ColorPalette" url="https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/"/>.
+	/// </summary>
+	/// <remarks>
+	/// <para>The palette is displayed as a series of color swatches. Swatches auto fill available space left-to-right and top-to-bottom. The swatches will auto-scroll as needed.</para>
+	/// <para>The user can click on a color swatch to select its color.</para>
+	/// </remarks>
+	/// <example>
+	///  <code>
+	///ColorPalettePanel panel = new ColorPalettePanel(myColorPalette) {
+	///	Location = new Point(10, 10),
+	///	Size = new Size(150, 200)
+	///	};
+	///form.Controls.Add(panel);
+	///  </code>
+	/// </example>
 	public class ColorPalettePanel : FlowLayoutPanel
 	{
+		/// <summary>Width of vertical scroll bar.</summary>
 		public static readonly int SCROLLBAR_WIDTH = System.Windows.Forms.SystemInformation.VerticalScrollBarWidth + 5;
+		/// <summary>Width and height of each color swatch.</summary>
 		public static readonly int SWATCH_WIDTH = 25;
 
 		private ContextMenu colorContextMenu;
 
+		/// <summary>Triggers when the user selects a color.</summary>
 		public event EventHandler ColorChanged;
 
 		private Color? selectedColor = null;
+		/// <summary></summary>
 		public Color? SelectedColor {
 			get {
 				return selectedColor;
@@ -37,11 +57,15 @@ namespace WithoutHaste.Windows.GUI
 			}
 		}
 
+		/// <summary></summary>
 		public ColorPalettePanel()
 		{
 			Init();
 		}
 
+		/// <summary></summary>
+		/// <param name="colorPalette">Color palette to display.</param>
+		/// <param name="colorContextMenu">Optional context menu to apply to each color swatch.</param>
 		public ColorPalettePanel(ColorPalette colorPalette, ContextMenu colorContextMenu = null)
 		{
 			Init();
@@ -55,6 +79,7 @@ namespace WithoutHaste.Windows.GUI
 			this.BorderStyle = BorderStyle.Fixed3D;
 		}
 
+		/// <summary>Set the color palette to display in the panel.</summary>
 		public void DisplayColors(ColorPalette colorPalette)
 		{
 			this.SuspendLayout();

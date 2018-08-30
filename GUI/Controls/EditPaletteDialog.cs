@@ -9,6 +9,21 @@ using WithoutHaste.Drawing.Colors;
 
 namespace WithoutHaste.Windows.GUI
 {
+	/// <summary>
+	/// Control for editing a <see cref="WithoutHaste.Drawing.Color.ColorPalette" url="https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/"/>.
+	/// </summary>
+	/// <remarks>
+	/// This dialog will open an existing palette file (or create an empty palette), let the user edit the palette, and save the changes before closing.
+	/// </remarks>
+	/// <example>
+	///  <code>
+	///using(EditPaletteDialog form = new EditPaletteDialog(paletteFilename))
+	///{
+	///	if(form.ShowDialog() != DialogResult.OK)
+	///		return;
+	///}
+	///  </code>
+	/// </example>
 	public class EditPaletteDialog : Form
 	{
 		private string fullFilename;
@@ -18,18 +33,23 @@ namespace WithoutHaste.Windows.GUI
 		private bool editedSinceSave;
 		private History history;
 
+		/// <summary>Location of color palette file, including full path + filename + extension.</summary>
+		/// <remarks>If palette is saved to a new location, this property will have the new location after the dialog closes.</remarks>
 		public string FullFilename {
 			get {
 				return fullFilename;
 			}
 		}
 
+		/// <summary></summary>
 		public EditPaletteDialog()
 		{
 			this.colorPalette = new ColorPalette();
 			Init();
 		}
 
+		/// <summary></summary>
+		/// <param name="fullFilename">Location of color palette file, including full path + filename + extension.</param>
 		public EditPaletteDialog(string fullFilename)
 		{
 			if(fullFilename == null)

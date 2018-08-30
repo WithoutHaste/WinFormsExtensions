@@ -1,56 +1,57 @@
 # ColorPalettePanel
 
-`System.Windows.Forms.Panel` for displaying a `WithoutHaste.Drawing.Colors.ColorPalette` and to select colors from it.
+Control for displaying a [ColorPalette](https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/documentation/ColorPalette.md).
 
-## Requirements
+The palette is displayed as a series of color swatches. Swatches auto fill available space left-to-right and top-to-bottom. The swatches will auto-scroll as needed.
 
-System.Drawing.dll
+The user can click on a color swatch to select its color.
 
-[WithoutHaste.Drawing.Colors.dll](https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors)
+Base Type: System.Windows.Forms.FlowLayoutPanel
 
-## Usage
-
-`ColorPalettePanel` is derived from `System.Windows.Forms.FlowLayoutPanel`.
+## Examples
 
 ```
-ColorPalettePanel panel = new ColorPalettePanel() {
+ColorPalettePanel panel = new ColorPalettePanel(myColorPalette) {
 	Location = new Point(10, 10),
 	Size = new Size(150, 200)
-};
+	};
 form.Controls.Add(panel);
 ```
 
-The panel displays color swatches from a `ColorPalette` in a flow layout (swatches will rearrange to fill the panel from left-to-right, top-to-bottom) with auto-scrolling.
+## Fields
 
-The user can click on a swatch to select its color.
+### Constant Fields
 
-## Constants
+#### Int32 SCROLLBAR_WIDTH
 
-`int SCROLLBAR_WIDTH`: width of the scroll bar, whether or not it is visible.
+Width of vertical scroll bar.
 
-`int SWATCH_WIDTH`: the width and height of a color swatch.
+#### Int32 SWATCH_WIDTH
 
-## Events
-
-`System.EventHandler ColorChanged`: triggers when user selects a color swatch.
+Width and height of each color swatch.
 
 ## Properties
 
-`System.Drawing.Color? SelectedColor`: get or set the selected color.
+### System.Drawing.Color? SelectedColor
+
+## Events
+
+###  ColorChanged
+
+Triggers when the user selects a color.
 
 ## Constructors
 
-Parameterless: `new ColorPalettePanel()`  
-Create an empty panel.
+### ColorPalettePanel()
 
-Open file: `new ColorPalettePanel(ColorPalette, ContextMenu = null)`  
-Display an existing `ColorPalette`.  
-Optional: specify a `ContextMenu` to be used for each color swatch.
+### ColorPalettePanel(WithoutHaste.Drawing.Colors.ColorPalette colorPalette, System.Windows.Forms.ContextMenu colorContextMenu)
+
+Parameter colorPalette: Color palette to display.  
+Parameter colorContextMenu: Optional context menu to apply to each color swatch.  
 
 ## Methods
 
-### DisplayColors
+### Void DisplayColors(WithoutHaste.Drawing.Colors.ColorPalette colorPalette)
 
-Display a different `ColorPalette`.
+Set the color palette to display in the panel.
 
-`panel.DisplayColors(ColorPalette);`

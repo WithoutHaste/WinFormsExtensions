@@ -1,38 +1,30 @@
 # NewColorDialog
 
-Windows Forms color picker dialog for selecting a System.Drawing.Color.
+Color picker dialog for selecting a System.Drawing.Color.
 
-## Requirements
+Base Type: System.Windows.Forms.Form
 
-System.Drawing.dll
-
-## Usage
-
-Opens like a normal dialog.
+## Examples
 
 ```
-using(NewColorDialog form = new NewColorDialog())
+using(NewColorDialog form = new NewColorDialog(color))
 {
 	if(form.ShowDialog() != DialogResult.OK)
 		return;
 }
 ```
 
-This dialog presents several ways of selecting a color:  
-- point-and-click color selector
-- hexadecimal
-- red/green/blue values
-- hue/saturation/value values
-
 ## Properties
 
-`System.Drawing.Color Color`: the selected color
+### Color Color
+
+Selected color.
 
 ## Constructors
 
-Parameterless: `new NewColorDialog();`  
-Select a color, starting with black.
+### NewColorDialog()
 
-Existing color: `new NewColorDialog(System.Drawing.Color);`  
-Select a color, starting with the specified color.
+### NewColorDialog(System.Drawing.Color color)
+
+Open dialog with this color selected.
 

@@ -2,24 +2,45 @@
 
 Standard application icons, supplied as System.Drawing.Image.
 
-## Requirements
+Base Type: System.Object
 
-System.Drawing.dll
+## Examples
+
+```
+Image image = IconManager.UNDO;
+```
 
 ## Properties
 
-### Standard Icons
+### Image DROPPER
 
-`IconManager.UNDO`: left-bendy arrow  
-`IconManager.REDO`: right-bendy arrow  
+Eye dropper tool.
 
-`IconManager.ZOOM_IN`: magnifying glass with plus-sign  
-`IconManager.ZOOM_OUT`: magnifying glass with minus-sign  
-`IconManager.ZOOM_FIT`: fit-to-screen arrows
+### Image REDO
 
-`IconManager.DROPPER`: eye-dropper tool  
+Right-bendy arrow.
 
-### Other
+### Image SWATCH_SELECTOR
 
-`IconManager.ZOOM_100`: rounded rectangle  
-`IconManager.SWATCH_SELECTOR`: black and white square  
+Black and white square.
+
+### Image UNDO
+
+Left-bendy arrow.
+
+### Image ZOOM_100
+
+Rounded rectangle outline.
+
+### Image ZOOM_FIT
+
+Fit-to-screen arrows.
+
+### Image ZOOM_IN
+
+Magnifying glass with plus-sign.
+
+### Image ZOOM_OUT
+
+Magnifying glass with minus-sign.
+

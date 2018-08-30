@@ -8,17 +8,30 @@ using System.Threading.Tasks;
 namespace WithoutHaste.Windows.GUI
 {
 	/// <summary>
-	/// Singleton object. Access icons with IconManager.REDO and similar.
+	/// Standard application icons, supplied as System.Drawing.Image.
 	/// </summary>
+	/// <example>
+	///  <code>
+	///Image image = IconManager.UNDO;
+	///  </code>
+	/// </example>
 	public class IconManager
 	{
+		/// <summary>Right-bendy arrow.</summary>
 		public static Image REDO { get { return Singleton.icon_redo; } }
+		/// <summary>Left-bendy arrow.</summary>
 		public static Image UNDO { get { return Singleton.icon_undo; } }
+		/// <summary>Black and white square.</summary>
 		public static Image SWATCH_SELECTOR { get { return Singleton.icon_swatch_selector; } }
+		/// <summary>Magnifying glass with plus-sign.</summary>
 		public static Image ZOOM_IN { get { return Singleton.icon_zoom_in; } }
+		/// <summary>Magnifying glass with minus-sign.</summary>
 		public static Image ZOOM_OUT { get { return Singleton.icon_zoom_out; } }
+		/// <summary>Fit-to-screen arrows.</summary>
 		public static Image ZOOM_FIT { get { return Singleton.icon_zoom_fit; } }
+		/// <summary>Rounded rectangle outline.</summary>
 		public static Image ZOOM_100 { get { return Singleton.icon_zoom_100; } }
+		/// <summary>Eye dropper tool.</summary>
 		public static Image DROPPER { get { return Singleton.icon_dropper; } }
 
 		private Image icon_redo;
@@ -31,7 +44,7 @@ namespace WithoutHaste.Windows.GUI
 		private Image icon_dropper;
 
 		private static IconManager singleton;
-		public static IconManager Singleton {
+		internal static IconManager Singleton {
 			get {
 				if(singleton == null)
 				{

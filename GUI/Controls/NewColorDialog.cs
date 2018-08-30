@@ -9,6 +9,16 @@ using WithoutHaste.Drawing.Colors;
 
 namespace WithoutHaste.Windows.GUI
 {
+	/// <summary>Color picker dialog for selecting a System.Drawing.Color.</summary>
+	/// <example>
+	///  <code>
+	///using(NewColorDialog form = new NewColorDialog(color))
+	///{
+	///	if(form.ShowDialog() != DialogResult.OK)
+	///		return;
+	///}
+	///  </code>
+	/// </example>
 	class NewColorDialog : Form
 	{
 		private HuePanel huePanel;
@@ -16,13 +26,16 @@ namespace WithoutHaste.Windows.GUI
 		private ColorDataPanel colorDataPanel;
 		private Panel selectedColorPanel;
 
+		/// <summary>Selected color.</summary>
 		public Color Color { get; protected set; }
 
+		/// <summary></summary>
 		public NewColorDialog()
 		{
 			Init();
 		}
 
+		/// <summary>Open dialog with this color selected.</summary>
 		public NewColorDialog(Color color)
 		{
 			Color = color;

@@ -8,13 +8,17 @@ using System.Threading.Tasks;
 
 namespace WithoutHaste.Windows.GUI
 {
+	/// <summary>
+	/// Various utilities related to image processing.
+	/// </summary>
 	public static class ImageHelper
 	{
 		/// <summary>
-		/// GDI+ expects the original MemoryStream used to load an image to remain open for the full life of the Image. If you close the MemoryStream and then try to save the Image to the same location as it was loaded from, you'll get a "A generic error occurred in GDI+" exception.
-		/// 
-		/// Opening images with this method will avoid that error.
+		/// <para>To avoid "A generic error occurred in GDI+" exception.</para>
+		/// <para>GDI+ expects the original MemoryStream used to load an image to remain open for the full life of the image. If you close the MemoryStream and then try to save the image to the same location as it was loaded from, you'll get this exception.</para>
+		/// <para>Opening images with this method will avoid that error.</para>
 		/// </summary>
+		/// <param name="fullFilename">Full path and filename to image.</param>
 		public static Bitmap SafeLoadBitmap(string fullFilename)
 		{
 			byte[] imageBytes = File.ReadAllBytes(fullFilename);

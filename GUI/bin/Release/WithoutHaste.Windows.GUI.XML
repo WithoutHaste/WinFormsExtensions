@@ -1,0 +1,439 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WithoutHaste.Windows.GUI</name>
+    </assembly>
+    <members>
+        <member name="T:WithoutHaste.Windows.GUI.ColorPalettePanel">
+             <summary>
+             Control for displaying a <see cref="!:WithoutHaste.Drawing.Color.ColorPalette" url="https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/"/>.
+             </summary>
+             <remarks>
+             <para>The palette is displayed as a series of color swatches. Swatches auto fill available space left-to-right and top-to-bottom. The swatches will auto-scroll as needed.</para>
+             <para>The user can click on a color swatch to select its color.</para>
+             </remarks>
+             <example>
+              <code>
+            ColorPalettePanel panel = new ColorPalettePanel(myColorPalette) {
+            	Location = new Point(10, 10),
+            	Size = new Size(150, 200)
+            	};
+            form.Controls.Add(panel);
+              </code>
+             </example>
+        </member>
+        <member name="F:WithoutHaste.Windows.GUI.ColorPalettePanel.SCROLLBAR_WIDTH">
+            <summary>Width of vertical scroll bar.</summary>
+        </member>
+        <member name="F:WithoutHaste.Windows.GUI.ColorPalettePanel.SWATCH_WIDTH">
+            <summary>Width and height of each color swatch.</summary>
+        </member>
+        <member name="E:WithoutHaste.Windows.GUI.ColorPalettePanel.ColorChanged">
+            <summary>Triggers when the user selects a color.</summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.ColorPalettePanel.SelectedColor">
+            <summary></summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.ColorPalettePanel.#ctor">
+            <summary></summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.ColorPalettePanel.#ctor(WithoutHaste.Drawing.Colors.ColorPalette,System.Windows.Forms.ContextMenu)">
+            <summary></summary>
+            <param name="colorPalette">Color palette to display.</param>
+            <param name="colorContextMenu">Optional context menu to apply to each color swatch.</param>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.ColorPalettePanel.DisplayColors(WithoutHaste.Drawing.Colors.ColorPalette)">
+            <summary>Set the color palette to display in the panel.</summary>
+        </member>
+        <member name="T:WithoutHaste.Windows.GUI.EditPaletteDialog">
+             <summary>
+             Control for editing a <see cref="!:WithoutHaste.Drawing.Color.ColorPalette" url="https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/"/>.
+             </summary>
+             <remarks>
+             This dialog will open an existing palette file (or create an empty palette), let the user edit the palette, and save the changes before closing.
+             </remarks>
+             <example>
+              <code>
+            using(EditPaletteDialog form = new EditPaletteDialog(paletteFilename))
+            {
+            	if(form.ShowDialog() != DialogResult.OK)
+            		return;
+            }
+              </code>
+             </example>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.EditPaletteDialog.FullFilename">
+            <summary>Location of color palette file, including full path + filename + extension.</summary>
+            <remarks>If palette is saved to a new location, this property will have the new location after the dialog closes.</remarks>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.EditPaletteDialog.#ctor">
+            <summary></summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.EditPaletteDialog.#ctor(System.String)">
+            <summary></summary>
+            <param name="fullFilename">Location of color palette file, including full path + filename + extension.</param>
+        </member>
+        <member name="T:WithoutHaste.Windows.GUI.IconManager">
+             <summary>
+             Standard application icons, supplied as System.Drawing.Image.
+             </summary>
+             <example>
+              <code>
+            Image image = IconManager.UNDO;
+              </code>
+             </example>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.IconManager.REDO">
+            <summary>Right-bendy arrow.</summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.IconManager.UNDO">
+            <summary>Left-bendy arrow.</summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.IconManager.SWATCH_SELECTOR">
+            <summary>Black and white square.</summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.IconManager.ZOOM_IN">
+            <summary>Magnifying glass with plus-sign.</summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.IconManager.ZOOM_OUT">
+            <summary>Magnifying glass with minus-sign.</summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.IconManager.ZOOM_FIT">
+            <summary>Fit-to-screen arrows.</summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.IconManager.ZOOM_100">
+            <summary>Rounded rectangle outline.</summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.IconManager.DROPPER">
+            <summary>Eye dropper tool.</summary>
+        </member>
+        <member name="T:WithoutHaste.Windows.GUI.NewColorDialog">
+             <summary>Color picker dialog for selecting a System.Drawing.Color.</summary>
+             <example>
+              <code>
+            using(NewColorDialog form = new NewColorDialog(color))
+            {
+            	if(form.ShowDialog() != DialogResult.OK)
+            		return;
+            }
+              </code>
+             </example>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.NewColorDialog.Color">
+            <summary>Selected color.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.NewColorDialog.#ctor">
+            <summary></summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.NewColorDialog.#ctor(System.Drawing.Color)">
+            <summary>Open dialog with this color selected.</summary>
+        </member>
+        <member name="T:WithoutHaste.Windows.GUI.History">
+            <summary>Data structure for managing redo/undo operations.</summary>
+            <remarks>
+             <list type="number">
+              <listheader>
+               Usage:
+              </listheader>
+              <item>Create one instance of a History for your application.</item>
+              <item>Create an IHistoryAction for each unique action in your application.</item>
+              <item>Add a new IHistoryAction to the History for each user action.</item>
+              <item>Call Undo and Redo to undo/redo user actions.</item>
+             </list>
+            </remarks>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.History.IsOn">
+            <summary>New actions will not be added to History when it is turned off.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.History.#ctor">
+            <summary></summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.History.On">
+            <summary>Turn history on.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.History.Off">
+            <summary>Turn history off. New actions will not be saved, but Undo and Redo will still work.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.History.Add(WithoutHaste.Windows.GUI.IHistoryAction)">
+            <summary>Add new action to the history. Clears the Redo list.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.History.Undo">
+            <summary>Undo an action. Calls IHistoryAction.Undo().</summary>
+            <remarks>Does nothing if there is no action to undo.</remarks>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.History.Redo">
+            <summary>Redo an action. Calls IHistoryAction.Do().</summary>
+            <remarks>Does nothing if there is no action to redo.</remarks>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.History.Clear">
+            <summary>Clear history.</summary>
+        </member>
+        <member name="T:WithoutHaste.Windows.GUI.HistoryActionGroup">
+            <summary>
+            An <see cref="T:WithoutHaste.Windows.GUI.IHistoryAction"/> that groups actions that must be undone/redone as a set.
+            </summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.HistoryActionGroup.#ctor">
+            <summary></summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.HistoryActionGroup.#ctor(System.Collections.Generic.List{WithoutHaste.Windows.GUI.IHistoryAction})">
+            <summary>Initialize group with an ordered list of actions.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.HistoryActionGroup.Add(WithoutHaste.Windows.GUI.IHistoryAction)">
+            <summary>Add an action to the end of the ordered list.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.HistoryActionGroup.Do">
+            <summary>Redo grouped actions in normal order.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.HistoryActionGroup.Undo">
+            <summary>Undo grouped actions in reverse order.</summary>
+        </member>
+        <member name="T:WithoutHaste.Windows.GUI.IHistoryAction">
+            <summary>An action that can be managed by a <see cref="T:WithoutHaste.Windows.GUI.History"/> object.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.IHistoryAction.Do">
+            <summary>Action to run on "redo".</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.IHistoryAction.Undo">
+            <summary>Action to run on "undo".</summary>
+        </member>
+        <member name="T:WithoutHaste.Windows.GUI.ImageHelper">
+            <summary>
+            Various utilities related to image processing.
+            </summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.ImageHelper.SafeLoadBitmap(System.String)">
+            <summary>
+            <para>To avoid "A generic error occurred in GDI+" exception.</para>
+            <para>GDI+ expects the original MemoryStream used to load an image to remain open for the full life of the image. If you close the MemoryStream and then try to save the image to the same location as it was loaded from, you'll get this exception.</para>
+            <para>Opening images with this method will avoid that error.</para>
+            </summary>
+            <param name="fullFilename">Full path and filename to image.</param>
+        </member>
+        <member name="T:WithoutHaste.Windows.GUI.LayoutHelper">
+             <summary>
+             <para>Helper for placing and sizing controls in a Form relative to each other.</para>
+             <para>Uses method chaining for a fluent writing style. Location and sizing methods can be chained in any order. Apply must be the last command.</para>
+             <para>Add the control to its parent after using LayoutHelper.</para>
+             <para>All methods in <see cref="T:WithoutHaste.Windows.GUI.LayoutOptions"/> can also be called on LayoutHelper.</para>
+             </summary>
+             <example>
+              <code>
+            form.Controls.Add(toolStrip);
+            form.Controls.Add(otherControl);
+            LayoutHelper.Below(toolStrip).MatchLeft(otherControl).Right(form).Height(25).Apply(control);
+            form.Controls.Add(control);
+              </code>
+             </example>
+        </member>
+        <member name="F:WithoutHaste.Windows.GUI.LayoutHelper.AnchorAll">
+            <summary>Control.Anchor setting for anchoring in all directions.</summary>
+        </member>
+        <member name="T:WithoutHaste.Windows.GUI.LayoutOptions">
+            <summary>
+            These operations are intended to be used from <see cref="T:WithoutHaste.Windows.GUI.LayoutHelper"/>.
+            </summary>
+            <remarks>This object will collect commands for how to position and size a control, and then apply those commands all at once.</remarks>
+            <layout methods="keep_order"/>
+        </member>
+        <member name="F:WithoutHaste.Windows.GUI.LayoutOptions.PositionType.None">
+            <summary></summary>
+        </member>
+        <member name="F:WithoutHaste.Windows.GUI.LayoutOptions.PositionType.InAbsolute">
+            <summary>Position is based on ReferenceControl.ClientSize edges.</summary>
+        </member>
+        <member name="F:WithoutHaste.Windows.GUI.LayoutOptions.PositionType.InFloat">
+            <summary>
+            Works Like HTML float. Position is based on Controls already in ReferenceControl.
+            </summary>
+            <example>Float left means place this to the right of the left-most control in the reference.</example>
+        </member>
+        <member name="F:WithoutHaste.Windows.GUI.LayoutOptions.PositionType.Match">
+            <summary>
+            Exactly match the position of the reference.
+            </summary>
+            <example>MatchLeft means use same Left location as the reference control.</example>
+        </member>
+        <member name="F:WithoutHaste.Windows.GUI.LayoutOptions.PositionType.NextTo">
+            <summary>
+            Place this control next to the reference.
+            </summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.#ctor">
+            <summary></summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Top(System.Windows.Forms.Control,System.Int32)">
+            <summary>Place at top of reference with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Top(System.Windows.Forms.Control)">
+            <summary>Place at top of reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.FloatTop(System.Windows.Forms.Control,System.Int32)">
+            <summary>Float towards top of reference with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.FloatTop(System.Windows.Forms.Control)">
+            <summary>Float towards top of reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.MatchTop(System.Windows.Forms.Control,System.Int32)">
+            <summary>Align with top of reference with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.MatchTop(System.Windows.Forms.Control)">
+            <summary>Align with top of reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Below(System.Windows.Forms.Control,System.Int32)">
+            <summary>Place below reference with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Below(System.Windows.Forms.Control)">
+            <summary>Place below reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Bottom(System.Windows.Forms.Control,System.Int32)">
+            <summary>Place at bottom of reference with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Bottom(System.Windows.Forms.Control)">
+            <summary>Place at bottom of reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.FloatBottom(System.Windows.Forms.Control,System.Int32)">
+            <summary>Float towards bottom of reference with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.FloatBottom(System.Windows.Forms.Control)">
+            <summary>Float towards bottom of reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.MatchBottom(System.Windows.Forms.Control,System.Int32)">
+            <summary>Align with bottom of reference with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.MatchBottom(System.Windows.Forms.Control)">
+            <summary>Align with bottom of reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Above(System.Windows.Forms.Control,System.Int32)">
+            <summary>Place above reference with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Above(System.Windows.Forms.Control)">
+            <summary>Place above reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Left(System.Windows.Forms.Control,System.Int32)">
+            <summary>Place at left-side of reference with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Left(System.Windows.Forms.Control)">
+            <summary>Place at left-side of reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.FloatLeft(System.Windows.Forms.Control,System.Int32)">
+            <summary>Float towards left-side of reference with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.FloatLeft(System.Windows.Forms.Control)">
+            <summary>Float towards left-side of reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.MatchLeft(System.Windows.Forms.Control,System.Int32)">
+            <summary>Align with left of reference with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.MatchLeft(System.Windows.Forms.Control)">
+            <summary>Align with left of reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.RightOf(System.Windows.Forms.Control,System.Int32)">
+            <summary>Place to the right of the reference with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.RightOf(System.Windows.Forms.Control)">
+            <summary>Place to the right of the reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Right(System.Windows.Forms.Control,System.Int32)">
+            <summary>Place at right-side of reference with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Right(System.Windows.Forms.Control)">
+            <summary>Place at right-side of reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.FloatRight(System.Windows.Forms.Control,System.Int32)">
+            <summary>Float towards right-side of reference with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.FloatRight(System.Windows.Forms.Control)">
+            <summary>Float towards right-side of reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.MatchRight(System.Windows.Forms.Control,System.Int32)">
+            <summary>Align with right of reference with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.MatchRight(System.Windows.Forms.Control)">
+            <summary>Align with right of reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.LeftOf(System.Windows.Forms.Control,System.Int32)">
+            <summary>Place to the left of the reference with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.LeftOf(System.Windows.Forms.Control)">
+            <summary>Place to the left of the reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Fill(System.Windows.Forms.Control,System.Int32)">
+            <summary>Fill reference to the left, right, top, and bottom, with this margin.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Fill(System.Windows.Forms.Control)">
+            <summary>Fill reference to the left, right, top, and bottom.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Width(System.Int32)">
+            <summary>Set the width of the control directly.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.CenterWidth(System.Windows.Forms.Control,System.Int32)">
+            <summary>Set the width of the control directly and specify that it should be horizontal-centered in its parent.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Height(System.Int32)">
+            <summary>Set the height of the control directly.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.CenterHeight(System.Windows.Forms.Control,System.Int32)">
+            <summary>Set the height of the control directly and specify that it should be vertical-centered in its parent.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Apply(System.Windows.Forms.Control)">
+            <summary>Apply settings to control.</summary>
+        </member>
+        <member name="T:WithoutHaste.Windows.GUI.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_DROPPER">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_REDO">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_SWATCH_SELECTOR">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_UNDO">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_ZOOM_100">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_ZOOM_FIT">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_ZOOM_IN">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_ZOOM_OUT">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>

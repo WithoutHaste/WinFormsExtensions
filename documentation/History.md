@@ -2,100 +2,47 @@
 
 Data structure for managing redo/undo operations.
 
-## History object
+Usage:  
+1. Create one instance of a History for your application.  
+2. Create an IHistoryAction for each unique action in your application.  
+3. Add a new IHistoryAction to the History for each user action.  
+4. Call Undo and Redo to undo/redo user actions.  
 
-1. Create one instance of a `History` for your application. 
-2. Create an `IHistoryAction` for each unique action in your application.
-3. Add a new `IHistoryAction` to the `History` for each user action.
-4. Call `Undo` and `Redo` to undo/redo user actions.
+Base Type: System.Object
 
-### Properties
+## Properties
 
-`bool IsOn`: true when the `History` is saving actions
+### Boolean IsOn
 
-### Constructor
+New actions will not be added to History when it is turned off.
 
-Parameterless constructor: `new History()`
+## Constructors
 
-History begins in "On" mode.
+### History()
 
-### Methods
+## Methods
 
-#### Add
+### Void Add(IHistoryAction action)
 
-Adds a new action to the history and clears the redo-list.
+Add new action to the history. Clears the Redo list.
 
-`history.Add(IHistoryAction);`
+### Void Clear()
 
-#### Clear
+Clear history.
 
-Clears the entire history.
+### Void Off()
 
-`history.Clear();`
+Turn history off. New actions will not be saved, but Undo and Redo will still work.
 
-#### Off
+### Void On()
 
-Turn `History` to inactive mode.
-- New actions will not be saved
-- `Undo` and `Redo` can still be used
+Turn history on.
 
-`history.Off();`
+### Void Redo()
 
-#### On
+Redo an action. Calls IHistoryAction.Do().
 
-Turn `History` to active mode.
+### Void Undo()
 
-`history.On();`
+Undo an action. Calls IHistoryAction.Undo().
 
-#### Redo
-
-Calls the `Redo` method on the last stored "redo" action.
-
-`history.Redo();`
-
-#### Undo
-
-Calls the `Undo` method on the last stored "undo" action.
-
-`history.Undo();`
-
-## IHistoryAction interface
-
-Create a class inheriting `IHistoryAction` for each unique action in your application.
-
-As actions occur, add them to the `History`.
-
-### Methods
-
-`void Do();`: executed on "redo"  
-`void Undo();`: executed on "undo"  
-
-## HistoryActionGroup object
-
-An `IHistoryAction` class. Use `HistoryActionGroup` to save actions that must be undone/redone as a set.
-
-### Constructors
-
-Parameterless: `new HistoryActionGroup();`  
-
-Initialize actions: `new HistoryActionGroup(List<IHistoryAction>);`
-
-### Methods
-
-#### Add
-
-Add an action to the end of the group. This action will be "redone" after all the other actions.
-
-`actionGroup.Add(IHistoryAction);`
-
-#### Do
-
-Execute all the "redo" actions in the group, in order.
-
-`actionGroup.Do();`
-
-#### Undo
-
-Execute all the "undo" actions in the group, in reverse order.
-
-`actionGroup.Undo();`
