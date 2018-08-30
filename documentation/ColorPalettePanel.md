@@ -2,7 +2,7 @@
 
 Control for displaying a [ColorPalette](https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/documentation/ColorPalette.md).
 
-The palette is displayed as a series of color swatches. Swatches auto fill available space left-to-right and top-to-bottom. The swatches will auto-scroll as needed.
+The palette is displayed as a series of color swatches. Swatches auto-fill available space left-to-right and top-to-bottom. The swatches will auto-scroll as needed.
 
 The user can click on a color swatch to select its color.
 
@@ -14,7 +14,7 @@ Base Type: System.Windows.Forms.FlowLayoutPanel
 ColorPalettePanel panel = new ColorPalettePanel(myColorPalette) {
 	Location = new Point(10, 10),
 	Size = new Size(150, 200)
-	};
+};
 form.Controls.Add(panel);
 ```
 
@@ -36,7 +36,7 @@ Width and height of each color swatch.
 
 ## Events
 
-###  ColorChanged
+### EventHandler ColorChanged
 
 Triggers when the user selects a color.
 

@@ -13,7 +13,7 @@ namespace WithoutHaste.Windows.GUI
 	/// Control for displaying a <see cref="WithoutHaste.Drawing.Color.ColorPalette" url="https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/"/>.
 	/// </summary>
 	/// <remarks>
-	/// <para>The palette is displayed as a series of color swatches. Swatches auto fill available space left-to-right and top-to-bottom. The swatches will auto-scroll as needed.</para>
+	/// <para>The palette is displayed as a series of color swatches. Swatches auto-fill available space left-to-right and top-to-bottom. The swatches will auto-scroll as needed.</para>
 	/// <para>The user can click on a color swatch to select its color.</para>
 	/// </remarks>
 	/// <example>
@@ -21,7 +21,7 @@ namespace WithoutHaste.Windows.GUI
 	///ColorPalettePanel panel = new ColorPalettePanel(myColorPalette) {
 	///	Location = new Point(10, 10),
 	///	Size = new Size(150, 200)
-	///	};
+	///};
 	///form.Controls.Add(panel);
 	///  </code>
 	/// </example>
