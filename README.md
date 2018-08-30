@@ -31,6 +31,14 @@ Other C# libraries:
 [WithoutHaste.Drawing.Shapes](https://github.com/WithoutHaste/WithoutHaste.Drawing.Shapes):  
 - shape/geometry calculations and operations
 
+## License
+
+[MIT License](https://github.com/WithoutHaste/WithoutHaste.Windows.GUI/blob/master/LICENSE)
+
+## Support
+
+[Become a patron](https://www.patreon.com/withouthaste) of this and other Without Haste open source projects.
+
 ## Versions
 
 Version 1 in development.
