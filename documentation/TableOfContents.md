@@ -34,12 +34,6 @@ Various utilities related to image processing.
 [LayoutHelper](LayoutHelper.md)  
 Helper for placing and sizing controls in a Form relative to each other.
 
-Uses method chaining for a fluent writing style. Location and sizing methods can be chained in any order. Apply must be the last command.
-
-Add the control to its parent after using LayoutHelper.
-
-All methods in [LayoutOptions](LayoutOptions.md) can also be called on LayoutHelper.
-
 ## Interfaces
 
 [IHistoryAction](IHistoryAction.md)  

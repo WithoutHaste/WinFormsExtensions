@@ -9,11 +9,13 @@ using System.Windows.Forms;
 namespace WithoutHaste.Windows.GUI
 {
 	/// <summary>
-	/// <para>Helper for placing and sizing controls in a Form relative to each other.</para>
+	/// Helper for placing and sizing controls in a Form relative to each other.
+	/// </summary>
+	/// <remarks>
 	/// <para>Uses method chaining for a fluent writing style. Location and sizing methods can be chained in any order. Apply must be the last command.</para>
 	/// <para>Add the control to its parent after using LayoutHelper.</para>
 	/// <para>All methods in <see cref="LayoutOptions"/> can also be called on LayoutHelper.</para>
-	/// </summary>
+	/// </remarks>
 	/// <example>
 	///  <code>
 	///form.Controls.Add(toolStrip);
