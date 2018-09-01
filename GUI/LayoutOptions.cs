@@ -360,18 +360,18 @@ namespace WithoutHaste.Windows.GUI
 		/// <summary>Set the height of the control directly.</summary>
 		public LayoutOptions Height(int height)
 		{
-			WidthReference = null;
+			HeightReference = null;
 			HeightMeasure = height;
-			WidthCentered = false;
+			HeightCentered = false;
 			return this;
 		}
 
 		/// <summary>Set the height of the control directly and specify that it should be vertical-centered in its parent.</summary>
 		public LayoutOptions CenterHeight(Control reference, int height)
 		{
-			WidthReference = reference;
+			HeightReference = reference;
 			HeightMeasure = height;
-			WidthCentered = true;
+			HeightCentered = true;
 			return this;
 		}
 

@@ -28,5 +28,55 @@ namespace WithoutHaste.Windows.GUI
     {
 		/// <summary>Control.Anchor setting for anchoring in all directions.</summary>
 		public const AnchorStyles AnchorAll = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+
+		//todo: check for nulls on all Control arguments
+
+		/// <summary>Place control directly to the right of the reference, aligned to the top of the reference.</summary>
+		public static void PlaceRightOf(Control control, Control reference)
+		{
+			control.Location = new Point(reference.Location.X + reference.Width, reference.Location.Y);
+		}
+
+		/// <summary>Place control directly to the right of the reference, aligned to the top of the reference, with margin in between.</summary>
+		public static void PlaceRightOf(Control control, Control reference, int margin)
+		{
+			control.Location = new Point(reference.Location.X + reference.Width + margin, reference.Location.Y);
+		}
+
+		/// <summary>Place control directly to the left of the reference, aligned to the top of the reference.</summary>
+		public static void PlaceLeftOf(Control control, Control reference)
+		{
+			control.Location = new Point(reference.Location.X - control.Width, reference.Location.Y);
+		}
+
+		/// <summary>Place control directly to the left of the reference, aligned to the top of the reference, with margin in between.</summary>
+		public static void PlaceLeftOf(Control control, Control reference, int margin)
+		{
+			control.Location = new Point(reference.Location.X - control.Width - margin, reference.Location.Y);
+		}
+
+		/// <summary>Center control vertically inside reference.</summary>
+		public static void CenterVertically(Control control, Control reference)
+		{
+			control.Location = new Point(control.Location.X, (reference.Height - control.Height) / 2);
+		}
+
+		/// <summary>Center control horizontally inside reference.</summary>
+		public static void CenterHorizontally(Control control, Control reference)
+		{
+			control.Location = new Point((reference.Width - control.Width) / 2, control.Location.Y);
+		}
+
+		/// <summary>Center control horizontally and vertically inside reference.</summary>
+		public static void CenterBoth(Control control, Control reference)
+		{
+			control.Location = new Point((reference.Width - control.Width) / 2, (reference.Height - control.Height) / 2);
+		}
+
+		/// <summary>Center control horizontally and vertically inside reference, within the screen.</summary>
+		public static void CenterBothInScreen(Control control, Control reference)
+		{
+			control.Location = new Point(reference.Location.X + (reference.Width - control.Width) / 2, reference.Location.Y + (reference.Height - control.Height) / 2);
+		}
 	}
 }

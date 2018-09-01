@@ -231,6 +231,30 @@
         <member name="F:WithoutHaste.Windows.GUI.LayoutHelper.AnchorAll">
             <summary>Control.Anchor setting for anchoring in all directions.</summary>
         </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.PlaceRightOf(System.Windows.Forms.Control,System.Windows.Forms.Control)">
+            <summary>Place control directly to the right of the reference, aligned to the top of the reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.PlaceRightOf(System.Windows.Forms.Control,System.Windows.Forms.Control,System.Int32)">
+            <summary>Place control directly to the right of the reference, aligned to the top of the reference, with margin in between.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.PlaceLeftOf(System.Windows.Forms.Control,System.Windows.Forms.Control)">
+            <summary>Place control directly to the left of the reference, aligned to the top of the reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.PlaceLeftOf(System.Windows.Forms.Control,System.Windows.Forms.Control,System.Int32)">
+            <summary>Place control directly to the left of the reference, aligned to the top of the reference, with margin in between.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.CenterVertically(System.Windows.Forms.Control,System.Windows.Forms.Control)">
+            <summary>Center control vertically inside reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.CenterHorizontally(System.Windows.Forms.Control,System.Windows.Forms.Control)">
+            <summary>Center control horizontally inside reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.CenterBoth(System.Windows.Forms.Control,System.Windows.Forms.Control)">
+            <summary>Center control horizontally and vertically inside reference.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.CenterBothInScreen(System.Windows.Forms.Control,System.Windows.Forms.Control)">
+            <summary>Center control horizontally and vertically inside reference, within the screen.</summary>
+        </member>
         <member name="T:WithoutHaste.Windows.GUI.LayoutOptions">
             <summary>
             These operations are intended to be used from <see cref="T:WithoutHaste.Windows.GUI.LayoutHelper"/>.
