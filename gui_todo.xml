@@ -38,52 +38,16 @@
       </Row>
       <Row>
         <Cell>
-          <Data ss:Type="Number">4</Data>
+          <Data ss:Type="Number">8</Data>
         </Cell>
         <Cell ss:StyleID="paragraph">
-          <Data ss:Type="String">Test EarlyDocs documentation for Controls:
-- ColorEventArgs
-- PaletteEventArgs
-- AddPaletteColorAction
-- RemovePaletteColorAction
-- ReplacePaletteColorAction
-- ColorDataPanel
-- ColorPalettePanel
-- EditPaletteDialog
-- HuePanel
-- IconManager
-- NewColorDialog
-- SaturationValueGradientPanel
-- SaturationValuePanel</Data>
+          <Data ss:Type="String">documentation should include some screen shots of the panels/dialogs</Data>
         </Cell>
         <Cell>
           <Data ss:Type="String">Todo</Data>
         </Cell>
         <Cell>
-          <Data ss:Type="String">Test</Data>
-        </Cell>
-        <Cell ss:StyleID="cellShortDate">
-          <Data ss:Type="DateTime">2018-12-12T00:00:00.000</Data>
-        </Cell>
-      </Row>
-      <Row>
-        <Cell>
-          <Data ss:Type="Number">6</Data>
-        </Cell>
-        <Cell ss:StyleID="paragraph">
-          <Data ss:Type="String">Test EarlyDocs documentation:
-- History
-- HistoryActionGroup
-- IHistoryAction
-- ImageHelper
-- LayoutHelper
-- LayoutOptions</Data>
-        </Cell>
-        <Cell>
-          <Data ss:Type="String">Todo</Data>
-        </Cell>
-        <Cell>
-          <Data ss:Type="String">Test</Data>
+          <Data ss:Type="String">Documentation</Data>
         </Cell>
         <Cell ss:StyleID="cellShortDate">
           <Data ss:Type="DateTime">2018-12-12T00:00:00.000</Data>
@@ -177,6 +141,66 @@
           <Data ss:Type="String">Done</Data>
         </Cell>
       </Row>
+      <Row>
+        <Cell>
+          <Data ss:Type="Number">6</Data>
+        </Cell>
+        <Cell ss:StyleID="paragraph">
+          <Data ss:Type="String">Test EarlyDocs documentation:
+- History - DONE
+- HistoryActionGroup - DONE
+- IHistoryAction - DONE
+- ImageHelper - DONE
+- LayoutHelper - DONE
+- LayoutOptions - DONE
+- LayoutOptions.PositionType - DONE</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Done</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Test</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-12T00:00:00.000</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-12T00:00:00.000</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell>
+          <Data ss:Type="Number">4</Data>
+        </Cell>
+        <Cell ss:StyleID="paragraph">
+          <Data ss:Type="String">Test EarlyDocs documentation for Controls:
+- ColorEventArgs - INTERNAL
+- PaletteEventArgs - INTERNAL
+- AddPaletteColorAction - INTERNAL
+- RemovePaletteColorAction - INTERNAL
+- ReplacePaletteColorAction - INTERNAL
+- ColorDataPanel - INTERNAL
+- ColorPalettePanel - DONE
+- EditPaletteDialog - DONE
+- HuePanel - INTERNAL
+- IconManager - DONE
+- NewColorDialog - DONE
+- SaturationValueGradientPanel - INTERNAL
+- SaturationValuePanel - INTERNAL</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Done</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Test</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-12T00:00:00.000</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-12T00:00:00.000</Data>
+        </Cell>
+      </Row>
     </Table>
     <x:WorksheetOptions />
   </ss:Worksheet>
@@ -223,7 +247,7 @@
           </Data>
         </Cell>
         <Cell>
-          <Data ss:Type="Number">6</Data>
+          <Data ss:Type="Number">8</Data>
         </Cell>
       </Row>
       <Row>

@@ -39,9 +39,6 @@ If palette is saved to a new location, this property will have the new location 
 
 ## EditPaletteDialog(string fullFilename)
 
-**Misc:**  
-  
-
 **Parameters:**  
 * **string fullFilename**: Location of color palette file, including full path + filename + extension.  
 

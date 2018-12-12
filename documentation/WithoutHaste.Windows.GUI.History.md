@@ -5,11 +5,11 @@
 Data structure for managing redo/undo operations.  
 
 **Remarks:**  
-1. Usage:  
-2. Create one instance of a History for your application.  
-3. Create an IHistoryAction for each unique action in your application.  
-4. Add a new IHistoryAction to the History for each user action.  
-5. Call Undo and Redo to undo/redo user actions.  
+Usage:  
+1. Create one instance of a History for your application.  
+2. Create an IHistoryAction for each unique action in your application.  
+3. Add a new IHistoryAction to the History for each user action.  
+4. Call Undo and Redo to undo/redo user actions.  
 
 # Properties
 
@@ -47,7 +47,7 @@ Turn history off. New actions will not be saved, but Undo and Redo will still wo
 
 **void**  
 
-Turn history on.  
+Turn history on. New actions will be saved.  
 
 ## Redo()
 

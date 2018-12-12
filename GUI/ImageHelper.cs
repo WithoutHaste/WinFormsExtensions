@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace WithoutHaste.Windows.GUI
 {
 	/// <summary>
-	/// Various utilities related to image processing.
+	/// Utilities related to image processing.
 	/// </summary>
 	public static class ImageHelper
 	{

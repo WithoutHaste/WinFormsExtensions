@@ -3,7 +3,7 @@
 **Static**  
 **Inheritance:** object  
 
-Various utilities related to image processing.  
+Utilities related to image processing.  
 
 # Static Methods
 

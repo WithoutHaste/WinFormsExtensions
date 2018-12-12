@@ -135,7 +135,7 @@ namespace WithoutHaste.Windows.GUI
 			return this;
 		}
 
-		/// <summary>Place below reference.</summary>
+		/// <summary>Place directly below reference.</summary>
 		public LayoutOptions Below(Control reference)
 		{
 			SetTop(reference, PositionType.NextTo, 0);
@@ -198,7 +198,7 @@ namespace WithoutHaste.Windows.GUI
 			return this;
 		}
 
-		/// <summary>Place above reference.</summary>
+		/// <summary>Place directly above reference.</summary>
 		public LayoutOptions Above(Control reference)
 		{
 			SetBottom(reference, PositionType.NextTo, 0);

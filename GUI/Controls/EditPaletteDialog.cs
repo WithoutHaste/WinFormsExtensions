@@ -48,7 +48,6 @@ namespace WithoutHaste.Windows.GUI
 			Init();
 		}
 
-		/// <summary></summary>
 		/// <param name="fullFilename">Location of color palette file, including full path + filename + extension.</param>
 		public EditPaletteDialog(string fullFilename)
 		{

@@ -63,7 +63,6 @@ namespace WithoutHaste.Windows.GUI
 			Init();
 		}
 
-		/// <summary></summary>
 		/// <param name="colorPalette">Color palette to display.</param>
 		/// <param name="colorContextMenu">Optional context menu to apply to each color swatch.</param>
 		public ColorPalettePanel(ColorPalette colorPalette, ContextMenu colorContextMenu = null)

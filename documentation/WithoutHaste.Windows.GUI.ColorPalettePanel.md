@@ -58,9 +58,6 @@ Triggers when the user selects a color.
 
 ## ColorPalettePanel(Drawing.Colors.ColorPalette colorPalette, [System.Windows.Forms.ContextMenu](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.contextmenu) colorContextMenu = null)
 
-**Misc:**  
-  
-
 **Parameters:**  
 * **Drawing.Colors.ColorPalette colorPalette**: Color palette to display.  
 * **[System.Windows.Forms.ContextMenu](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.contextmenu) colorContextMenu**: Optional context menu to apply to each color swatch.  

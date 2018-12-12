@@ -38,7 +38,7 @@ Color picker dialog for selecting a System.Drawing.Color.
 ## Static Types
 
 [**ImageHelper**](WithoutHaste.Windows.GUI.ImageHelper.md)  
-Various utilities related to image processing.  
+Utilities related to image processing.  
 
   
 [**LayoutHelper**](WithoutHaste.Windows.GUI.LayoutHelper.md)  

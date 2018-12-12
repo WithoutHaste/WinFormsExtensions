@@ -8,10 +8,8 @@ namespace WithoutHaste.Windows.GUI
 {
 	/// <summary>Data structure for managing redo/undo operations.</summary>
 	/// <remarks>
+	///  Usage:
 	///  <list type="number">
-	///   <listheader>
-	///    Usage:
-	///   </listheader>
 	///   <item>Create one instance of a History for your application.</item>
 	///   <item>Create an IHistoryAction for each unique action in your application.</item>
 	///   <item>Add a new IHistoryAction to the History for each user action.</item>
@@ -32,7 +30,7 @@ namespace WithoutHaste.Windows.GUI
 			On();
 		}
 
-		/// <summary>Turn history on.</summary>
+		/// <summary>Turn history on. New actions will be saved.</summary>
 		public void On()
 		{
 			IsOn = true;

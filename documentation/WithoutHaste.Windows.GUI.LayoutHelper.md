@@ -45,7 +45,7 @@ Place above reference with this margin.
 
 **static [LayoutOptions](WithoutHaste.Windows.GUI.LayoutOptions.md)**  
 
-Place above reference.  
+Place directly above reference.  
 
 ## Below([System.Windows.Forms.Control](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control) reference, int margin)
 
@@ -57,7 +57,7 @@ Place below reference with this margin.
 
 **static [LayoutOptions](WithoutHaste.Windows.GUI.LayoutOptions.md)**  
 
-Place below reference.  
+Place directly below reference.  
 
 ## Bottom([System.Windows.Forms.Control](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control) reference, int margin)
 

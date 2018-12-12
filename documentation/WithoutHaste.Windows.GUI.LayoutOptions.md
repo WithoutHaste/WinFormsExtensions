@@ -108,7 +108,7 @@ Place above reference with this margin.
 
 **LayoutOptions**  
 
-Place above reference.  
+Place directly above reference.  
 
 ## Apply([System.Windows.Forms.Control](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control) control)
 
@@ -126,7 +126,7 @@ Place below reference with this margin.
 
 **LayoutOptions**  
 
-Place below reference.  
+Place directly below reference.  
 
 ## Bottom([System.Windows.Forms.Control](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control) reference, int margin)
 
