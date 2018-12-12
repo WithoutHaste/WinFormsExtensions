@@ -15,6 +15,7 @@ namespace WithoutHaste.Windows.GUI
 	/// <layout methods="keep_order"/>
 	public class LayoutOptions
 	{
+		/// <summary>Ways of defining a position relative to another item.</summary>
 		public enum PositionType {
 			/// <summary></summary>
 			None=0,
@@ -38,28 +39,46 @@ namespace WithoutHaste.Windows.GUI
 
 		private const int DEFAULT_MIN_DIMENSION = 20;
 
+		/// <summary></summary>
 		public Control TopReference { get; protected set; }
+		/// <summary></summary>
 		public PositionType TopPosition { get; protected set; }
+		/// <summary></summary>
 		public int TopMargin { get; protected set; }
 
+		/// <summary></summary>
 		public Control BottomReference { get; protected set; }
+		/// <summary></summary>
 		public PositionType BottomPosition { get; protected set; }
+		/// <summary></summary>
 		public int BottomMargin { get; protected set; }
 
+		/// <summary></summary>
 		public Control LeftReference { get; protected set; }
+		/// <summary></summary>
 		public PositionType LeftPosition { get; protected set; }
+		/// <summary></summary>
 		public int LeftMargin { get; protected set; }
 
+		/// <summary></summary>
 		public Control RightReference { get; protected set; }
+		/// <summary></summary>
 		public PositionType RightPosition { get; protected set; }
+		/// <summary></summary>
 		public int RightMargin { get; protected set; }
 
+		/// <summary></summary>
 		public Control WidthReference { get; protected set; }
+		/// <summary></summary>
 		public int? WidthMeasure { get; protected set; }
+		/// <summary></summary>
 		public bool WidthCentered { get; protected set; }
 
+		/// <summary></summary>
 		public Control HeightReference { get; protected set; }
+		/// <summary></summary>
 		public int? HeightMeasure { get; protected set; }
+		/// <summary></summary>
 		public bool HeightCentered { get; protected set; }
 
 		/// <summary></summary>

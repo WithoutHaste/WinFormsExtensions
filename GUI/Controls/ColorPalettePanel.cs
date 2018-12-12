@@ -10,7 +10,7 @@ using WithoutHaste.Drawing.Colors;
 namespace WithoutHaste.Windows.GUI
 {
 	/// <summary>
-	/// Control for displaying a <see cref="WithoutHaste.Drawing.Color.ColorPalette" url="https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/"/>.
+	/// Control for displaying a <see cref="WithoutHaste.Drawing.Colors.ColorPalette" url="https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/"/>.
 	/// </summary>
 	/// <remarks>
 	/// <para>The palette is displayed as a series of color swatches. Swatches auto-fill available space left-to-right and top-to-bottom. The swatches will auto-scroll as needed.</para>

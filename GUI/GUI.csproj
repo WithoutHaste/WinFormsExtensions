@@ -11,6 +11,8 @@
     <AssemblyName>WithoutHaste.Windows.GUI</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\WithoutHaste.Windows.GUI.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -92,6 +95,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\ICON_DROPPER.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -131,6 +135,23 @@
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <EarlyDocsDllFile>$(ProjectDir)$(OutDir)WithoutHaste.Windows.GUI.dll</EarlyDocsDllFile>
+    <EarlyDocsXmlFile>$(ProjectDir)$(OutDir)WithoutHaste.Windows.GUI.XML</EarlyDocsXmlFile>
+    <EarlyDocsOutputDir>$(ProjectDir)..\documentation\</EarlyDocsOutputDir>
+    <!--<EarlyDocsSkip>True</EarlyDocsSkip>-->
+  </PropertyGroup>
+  <ItemGroup>
+    <EarlyDocsInclude Include="$(ProjectDir)$(OutDir)WithoutHaste.Drawing.Colors.dll">
+    </EarlyDocsInclude>
+  </ItemGroup>
+  <Import Project="packages\EarlyDocs.1.0.0\build\EarlyDocs.targets" Condition="Exists('packages\EarlyDocs.1.0.0\build\EarlyDocs.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EarlyDocs.1.0.0\build\EarlyDocs.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EarlyDocs.1.0.0\build\EarlyDocs.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

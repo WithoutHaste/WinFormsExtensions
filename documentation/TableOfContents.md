@@ -1,41 +1,19 @@
-# Contents
+# Table of Contents
 
-## Types
+## [WithoutHaste.Windows.GUI](TableOfContents.WithoutHaste.Windows.GUI.md)
 
-[ColorPalettePanel](ColorPalettePanel.md)  
-Control for displaying a [ColorPalette](https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/documentation/ColorPalette.md).
+[WithoutHaste.Windows.GUI.ColorPalettePanel](WithoutHaste.Windows.GUI.ColorPalettePanel.md)  
+[WithoutHaste.Windows.GUI.EditPaletteDialog](WithoutHaste.Windows.GUI.EditPaletteDialog.md)  
+[WithoutHaste.Windows.GUI.History](WithoutHaste.Windows.GUI.History.md)  
+[WithoutHaste.Windows.GUI.HistoryActionGroup](WithoutHaste.Windows.GUI.HistoryActionGroup.md)  
+[WithoutHaste.Windows.GUI.IconManager](WithoutHaste.Windows.GUI.IconManager.md)  
+[WithoutHaste.Windows.GUI.IHistoryAction](WithoutHaste.Windows.GUI.IHistoryAction.md)  
+[WithoutHaste.Windows.GUI.ImageHelper](WithoutHaste.Windows.GUI.ImageHelper.md)  
+[WithoutHaste.Windows.GUI.LayoutHelper](WithoutHaste.Windows.GUI.LayoutHelper.md)  
+[WithoutHaste.Windows.GUI.LayoutOptions](WithoutHaste.Windows.GUI.LayoutOptions.md)  
+[WithoutHaste.Windows.GUI.NewColorDialog](WithoutHaste.Windows.GUI.NewColorDialog.md)  
 
-[EditPaletteDialog](EditPaletteDialog.md)  
-Control for editing a [ColorPalette](https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/documentation/ColorPalette.md).
+### [WithoutHaste.Windows.GUI.Properties](TableOfContents.WithoutHaste.Windows.GUI.Properties.md)
 
-[History](History.md)  
-Data structure for managing redo/undo operations.
-
-[HistoryActionGroup](HistoryActionGroup.md)  
-An [IHistoryAction](IHistoryAction.md) that groups actions that must be undone/redone as a set.
-
-[IconManager](IconManager.md)  
-Standard application icons, supplied as System.Drawing.Image.
-
-[LayoutOptions](LayoutOptions.md)  
-These operations are intended to be used from [LayoutHelper](LayoutHelper.md).
-
-[NewColorDialog](NewColorDialog.md)  
-Color picker dialog for selecting a System.Drawing.Color.
-
-[Resources](Resources.md)  
-A strongly-typed resource class, for looking up localized strings, etc.
-
-## Static Types
-
-[ImageHelper](ImageHelper.md)  
-Various utilities related to image processing.
-
-[LayoutHelper](LayoutHelper.md)  
-Helper for placing and sizing controls in a Form relative to each other.
-
-## Interfaces
-
-[IHistoryAction](IHistoryAction.md)  
-An action that can be managed by a [History](History.md) object.
+[WithoutHaste.Windows.GUI.Properties.Resources](WithoutHaste.Windows.GUI.Properties.Resources.md)  
 

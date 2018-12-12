@@ -10,7 +10,7 @@ using WithoutHaste.Drawing.Colors;
 namespace WithoutHaste.Windows.GUI
 {
 	/// <summary>
-	/// Control for editing a <see cref="WithoutHaste.Drawing.Color.ColorPalette" url="https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/"/>.
+	/// Control for editing a <see cref="WithoutHaste.Drawing.Colors.ColorPalette" url="https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/"/>.
 	/// </summary>
 	/// <remarks>
 	/// This dialog will open an existing palette file (or create an empty palette), let the user edit the palette, and save the changes before closing.

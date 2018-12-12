@@ -25,7 +25,11 @@ namespace WithoutHaste.Windows.GUI
 		string call = signature;
 		call = call.Replace("int ", "");
 		call = call.Replace("Control ", "");
+
+		string crefSignature = line.Replace("public LayoutOptions ", "");
+		crefSignature = crefSignature.Replace("margin", "").Replace("reference", "").Replace("width", "").Replace("height", "").Replace(" ", "");
 #>
+		/// <duplicate cref='LayoutOptions.<#= crefSignature #>'/>
 		public static LayoutOptions <#= signature #>
 		{
 			return (new LayoutOptions()).<#= call #>;

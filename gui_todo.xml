@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <?mso-application progid="Excel.Sheet"?>
-<Workbook xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:x2="http://schemas.microsoft.com/office/excel/2003/xml" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:x="urn:schemas-microsoft-com:office:excel">
+<Workbook xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:x2="http://schemas.microsoft.com/office/excel/2003/xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:schemas-microsoft-com:office:spreadsheet">
   <Styles>
     <Style ss:ID="cellShortDate">
       <NumberFormat ss:Format="Short Date" />
@@ -14,6 +14,11 @@
   </Styles>
   <ss:Worksheet ss:Name="Active">
     <Table>
+      <Column ss:Width="25" />
+      <Column ss:Width="300" />
+      <Column ss:Width="60" />
+      <Column ss:Width="60" />
+      <Column ss:Width="60" />
       <Row>
         <Cell ss:StyleID="header">
           <Data ss:Type="String">Id</Data>
@@ -31,17 +36,65 @@
           <Data ss:Type="String">Created</Data>
         </Cell>
       </Row>
-      <Column ss:Width="25" />
-      <Column ss:Width="300" />
-      <Column ss:Width="60" />
-      <Column ss:Width="60" />
-      <Column ss:Width="60" />
       <Row>
         <Cell>
-          <Data ss:Type="Number">1</Data>
+          <Data ss:Type="Number">4</Data>
         </Cell>
         <Cell ss:StyleID="paragraph">
-          <Data ss:Type="String">add GetVersion public method</Data>
+          <Data ss:Type="String">Test EarlyDocs documentation for Controls:
+- ColorEventArgs
+- PaletteEventArgs
+- AddPaletteColorAction
+- RemovePaletteColorAction
+- ReplacePaletteColorAction
+- ColorDataPanel
+- ColorPalettePanel
+- EditPaletteDialog
+- HuePanel
+- IconManager
+- NewColorDialog
+- SaturationValueGradientPanel
+- SaturationValuePanel</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Todo</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Test</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-12T00:00:00.000</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell>
+          <Data ss:Type="Number">6</Data>
+        </Cell>
+        <Cell ss:StyleID="paragraph">
+          <Data ss:Type="String">Test EarlyDocs documentation:
+- History
+- HistoryActionGroup
+- IHistoryAction
+- ImageHelper
+- LayoutHelper
+- LayoutOptions</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Todo</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Test</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-12T00:00:00.000</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell>
+          <Data ss:Type="Number">5</Data>
+        </Cell>
+        <Cell ss:StyleID="paragraph">
+          <Data ss:Type="String">create its own NuGet package</Data>
         </Cell>
         <Cell>
           <Data ss:Type="String">Todo</Data>
@@ -50,7 +103,7 @@
           <Data ss:Type="String">Task</Data>
         </Cell>
         <Cell ss:StyleID="cellShortDate">
-          <Data ss:Type="DateTime">2018-09-06T00:00:00.000</Data>
+          <Data ss:Type="DateTime">2018-12-12T00:00:00.000</Data>
         </Cell>
       </Row>
       <Row>
@@ -98,6 +151,12 @@
   </ss:Worksheet>
   <ss:Worksheet ss:Name="Inactive">
     <Table>
+      <Column ss:Width="25" />
+      <Column ss:Width="300" />
+      <Column ss:Width="60" />
+      <Column ss:Width="60" />
+      <Column ss:Width="60" />
+      <Column ss:Width="60" />
       <Row>
         <Cell ss:StyleID="header">
           <Data ss:Type="String">Id</Data>
@@ -118,12 +177,6 @@
           <Data ss:Type="String">Done</Data>
         </Cell>
       </Row>
-      <Column ss:Width="25" />
-      <Column ss:Width="300" />
-      <Column ss:Width="60" />
-      <Column ss:Width="60" />
-      <Column ss:Width="60" />
-      <Column ss:Width="60" />
     </Table>
     <x:WorksheetOptions />
   </ss:Worksheet>
@@ -163,14 +216,14 @@
           </Data>
         </Cell>
         <Cell>
-          <Data ss:Type="String">Task</Data>
+          <Data ss:Type="String">Feature - Major</Data>
         </Cell>
         <Cell>
           <Data ss:Type="String">
           </Data>
         </Cell>
         <Cell>
-          <Data ss:Type="Number">3</Data>
+          <Data ss:Type="Number">6</Data>
         </Cell>
       </Row>
       <Row>
@@ -185,9 +238,143 @@
           </Data>
         </Cell>
         <Cell>
-          <Data ss:Type="String">Bug</Data>
+          <Data ss:Type="String">Feature - Minor</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Bug - Major</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Bug - Minor</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Task</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Documentation</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Test</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">
+          </Data>
         </Cell>
       </Row>
     </Table>
+    <x:WorksheetOptions />
   </ss:Worksheet>
 </Workbook>
