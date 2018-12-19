@@ -24,6 +24,12 @@ using(EditPaletteDialog form = new EditPaletteDialog(paletteFilename))
 
 # Properties
 
+## ColorPalette
+
+**Drawing.Colors.ColorPalette { public get; }**  
+
+The full palette object.  
+
 ## FullFilename
 
 **string { public get; }**  
@@ -37,8 +43,20 @@ If palette is saved to a new location, this property will have the new location 
 
 ## EditPaletteDialog()
 
+Start a new palette.  
+
 ## EditPaletteDialog(string fullFilename)
+
+Load and edit palette from file.  
 
 **Parameters:**  
 * **string fullFilename**: Location of color palette file, including full path + filename + extension.  
+
+## EditPaletteDialog(Drawing.Colors.ColorPalette colorPalette)
+
+Edit the provided palette.  
+
+**Remarks:**  
+The provided palette object will be updated directly.  
+The user will not be prompted to save the palette to a file.  
 

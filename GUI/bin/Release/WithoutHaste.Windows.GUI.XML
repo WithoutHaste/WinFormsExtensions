@@ -6,7 +6,7 @@
     <members>
         <member name="T:WithoutHaste.Windows.GUI.ColorPalettePanel">
              <summary>
-             Control for displaying a <see cref="!:WithoutHaste.Drawing.Color.ColorPalette" url="https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/"/>.
+             Control for displaying a <see cref="T:WithoutHaste.Drawing.Colors.ColorPalette" url="https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/"/>.
              </summary>
              <remarks>
              <para>The palette is displayed as a series of color swatches. Swatches auto-fill available space left-to-right and top-to-bottom. The swatches will auto-scroll as needed.</para>
@@ -38,7 +38,6 @@
             <summary></summary>
         </member>
         <member name="M:WithoutHaste.Windows.GUI.ColorPalettePanel.#ctor(WithoutHaste.Drawing.Colors.ColorPalette,System.Windows.Forms.ContextMenu)">
-            <summary></summary>
             <param name="colorPalette">Color palette to display.</param>
             <param name="colorContextMenu">Optional context menu to apply to each color swatch.</param>
         </member>
@@ -47,7 +46,7 @@
         </member>
         <member name="T:WithoutHaste.Windows.GUI.EditPaletteDialog">
              <summary>
-             Control for editing a <see cref="!:WithoutHaste.Drawing.Color.ColorPalette" url="https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/"/>.
+             Control for editing a <see cref="T:WithoutHaste.Drawing.Colors.ColorPalette" url="https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/blob/master/"/>.
              </summary>
              <remarks>
              This dialog will open an existing palette file (or create an empty palette), let the user edit the palette, and save the changes before closing.
@@ -66,12 +65,24 @@
             <summary>Location of color palette file, including full path + filename + extension.</summary>
             <remarks>If palette is saved to a new location, this property will have the new location after the dialog closes.</remarks>
         </member>
+        <member name="P:WithoutHaste.Windows.GUI.EditPaletteDialog.ColorPalette">
+            <summary>
+            The full palette object.
+            </summary>
+        </member>
         <member name="M:WithoutHaste.Windows.GUI.EditPaletteDialog.#ctor">
-            <summary></summary>
+            <summary>Start a new palette.</summary>
         </member>
         <member name="M:WithoutHaste.Windows.GUI.EditPaletteDialog.#ctor(System.String)">
-            <summary></summary>
+            <summary>Load and edit palette from file.</summary>
             <param name="fullFilename">Location of color palette file, including full path + filename + extension.</param>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.EditPaletteDialog.#ctor(WithoutHaste.Drawing.Colors.ColorPalette)">
+            <summary>Edit the provided palette.</summary>
+            <remarks>
+            The provided palette object will be updated directly.
+            The user will not be prompted to save the palette to a file.
+            </remarks>
         </member>
         <member name="T:WithoutHaste.Windows.GUI.IconManager">
              <summary>
@@ -131,10 +142,8 @@
         <member name="T:WithoutHaste.Windows.GUI.History">
             <summary>Data structure for managing redo/undo operations.</summary>
             <remarks>
+             Usage:
              <list type="number">
-              <listheader>
-               Usage:
-              </listheader>
               <item>Create one instance of a History for your application.</item>
               <item>Create an IHistoryAction for each unique action in your application.</item>
               <item>Add a new IHistoryAction to the History for each user action.</item>
@@ -149,7 +158,7 @@
             <summary></summary>
         </member>
         <member name="M:WithoutHaste.Windows.GUI.History.On">
-            <summary>Turn history on.</summary>
+            <summary>Turn history on. New actions will be saved.</summary>
         </member>
         <member name="M:WithoutHaste.Windows.GUI.History.Off">
             <summary>Turn history off. New actions will not be saved, but Undo and Redo will still work.</summary>
@@ -199,7 +208,7 @@
         </member>
         <member name="T:WithoutHaste.Windows.GUI.ImageHelper">
             <summary>
-            Various utilities related to image processing.
+            Utilities related to image processing.
             </summary>
         </member>
         <member name="M:WithoutHaste.Windows.GUI.ImageHelper.SafeLoadBitmap(System.String)">
@@ -255,12 +264,129 @@
         <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.CenterBothInScreen(System.Windows.Forms.Control,System.Windows.Forms.Control)">
             <summary>Center control horizontally and vertically inside reference, within the screen.</summary>
         </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Top(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Top(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Top(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Top(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.FloatTop(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.FloatTop(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.FloatTop(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.FloatTop(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.MatchTop(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.MatchTop(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.MatchTop(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.MatchTop(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Below(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Below(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Below(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Below(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Bottom(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Bottom(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Bottom(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Bottom(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.FloatBottom(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.FloatBottom(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.FloatBottom(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.FloatBottom(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.MatchBottom(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.MatchBottom(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.MatchBottom(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.MatchBottom(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Above(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Above(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Above(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Above(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Left(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Left(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Left(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Left(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.FloatLeft(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.FloatLeft(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.FloatLeft(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.FloatLeft(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.MatchLeft(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.MatchLeft(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.MatchLeft(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.MatchLeft(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.RightOf(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.RightOf(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.RightOf(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.RightOf(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Right(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Right(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Right(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Right(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.FloatRight(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.FloatRight(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.FloatRight(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.FloatRight(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.MatchRight(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.MatchRight(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.MatchRight(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.MatchRight(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.LeftOf(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.LeftOf(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.LeftOf(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.LeftOf(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Fill(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Fill(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Fill(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Fill(System.Windows.Forms.Control)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Width(System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Width(System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.CenterWidth(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.CenterWidth(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Height(System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Height(System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.CenterHeight(System.Windows.Forms.Control,System.Int32)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.CenterHeight(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
         <member name="T:WithoutHaste.Windows.GUI.LayoutOptions">
             <summary>
             These operations are intended to be used from <see cref="T:WithoutHaste.Windows.GUI.LayoutHelper"/>.
             </summary>
             <remarks>This object will collect commands for how to position and size a control, and then apply those commands all at once.</remarks>
             <layout methods="keep_order"/>
+        </member>
+        <member name="T:WithoutHaste.Windows.GUI.LayoutOptions.PositionType">
+            <summary>Ways of defining a position relative to another item.</summary>
         </member>
         <member name="F:WithoutHaste.Windows.GUI.LayoutOptions.PositionType.None">
             <summary></summary>
@@ -284,6 +410,60 @@
             <summary>
             Place this control next to the reference.
             </summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.TopReference">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.TopPosition">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.TopMargin">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.BottomReference">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.BottomPosition">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.BottomMargin">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.LeftReference">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.LeftPosition">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.LeftMargin">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.RightReference">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.RightPosition">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.RightMargin">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.WidthReference">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.WidthMeasure">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.WidthCentered">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.HeightReference">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.HeightMeasure">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.HeightCentered">
+            <summary></summary>
         </member>
         <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.#ctor">
             <summary></summary>
@@ -310,7 +490,7 @@
             <summary>Place below reference with this margin.</summary>
         </member>
         <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Below(System.Windows.Forms.Control)">
-            <summary>Place below reference.</summary>
+            <summary>Place directly below reference.</summary>
         </member>
         <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Bottom(System.Windows.Forms.Control,System.Int32)">
             <summary>Place at bottom of reference with this margin.</summary>
@@ -334,7 +514,7 @@
             <summary>Place above reference with this margin.</summary>
         </member>
         <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Above(System.Windows.Forms.Control)">
-            <summary>Place above reference.</summary>
+            <summary>Place directly above reference.</summary>
         </member>
         <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Left(System.Windows.Forms.Control,System.Int32)">
             <summary>Place at left-side of reference with this margin.</summary>

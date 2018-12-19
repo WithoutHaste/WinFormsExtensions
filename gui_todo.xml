@@ -143,6 +143,28 @@
       </Row>
       <Row>
         <Cell>
+          <Data ss:Type="Number">9</Data>
+        </Cell>
+        <Cell ss:StyleID="paragraph">
+          <Data ss:Type="String">EditPaletteDialog
+support editing palette object provided, with no need to save to file
+for Perpetual Paint</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Done</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Feature - Minor</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-19T00:00:00.000</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-19T00:00:00.000</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell>
           <Data ss:Type="Number">6</Data>
         </Cell>
         <Cell ss:StyleID="paragraph">
@@ -247,7 +269,7 @@
           </Data>
         </Cell>
         <Cell>
-          <Data ss:Type="Number">8</Data>
+          <Data ss:Type="Number">9</Data>
         </Cell>
       </Row>
       <Row>
@@ -279,8 +301,7 @@
           </Data>
         </Cell>
         <Cell>
-          <Data ss:Type="String">
-          </Data>
+          <Data ss:Type="String">Inactive</Data>
         </Cell>
         <Cell>
           <Data ss:Type="String">
@@ -304,8 +325,7 @@
           </Data>
         </Cell>
         <Cell>
-          <Data ss:Type="String">
-          </Data>
+          <Data ss:Type="String">Inactive</Data>
         </Cell>
         <Cell>
           <Data ss:Type="String">
@@ -329,8 +349,7 @@
           </Data>
         </Cell>
         <Cell>
-          <Data ss:Type="String">
-          </Data>
+          <Data ss:Type="String">Inactive</Data>
         </Cell>
         <Cell>
           <Data ss:Type="String">
@@ -354,8 +373,7 @@
           </Data>
         </Cell>
         <Cell>
-          <Data ss:Type="String">
-          </Data>
+          <Data ss:Type="String">Inactive</Data>
         </Cell>
         <Cell>
           <Data ss:Type="String">
@@ -379,8 +397,7 @@
           </Data>
         </Cell>
         <Cell>
-          <Data ss:Type="String">
-          </Data>
+          <Data ss:Type="String">Inactive</Data>
         </Cell>
         <Cell>
           <Data ss:Type="String">

@@ -26,6 +26,7 @@ namespace WithoutHaste.Windows.GUI
 	/// </example>
 	public class EditPaletteDialog : Form
 	{
+		private bool promptToSaveFile = true;
 		private string fullFilename;
 		private ColorPalette colorPalette;
 		private ColorPalettePanel colorPalettePanel;
@@ -41,13 +42,23 @@ namespace WithoutHaste.Windows.GUI
 			}
 		}
 
-		/// <summary></summary>
+		/// <summary>
+		/// The full palette object.
+		/// </summary>
+		public ColorPalette ColorPalette {
+			get {
+				return colorPalette;
+			}
+		}
+
+		/// <summary>Start a new palette.</summary>
 		public EditPaletteDialog()
 		{
 			this.colorPalette = new ColorPalette();
 			Init();
 		}
 
+		/// <summary>Load and edit palette from file.</summary>
 		/// <param name="fullFilename">Location of color palette file, including full path + filename + extension.</param>
 		public EditPaletteDialog(string fullFilename)
 		{
@@ -56,6 +67,21 @@ namespace WithoutHaste.Windows.GUI
 
 			this.fullFilename = fullFilename;
 			this.colorPalette = WithoutHaste.Drawing.Colors.ColorPalette.Load(fullFilename);
+			Init();
+		}
+
+		/// <summary>Edit the provided palette.</summary>
+		/// <remarks>
+		/// The provided palette object will be updated directly.
+		/// The user will not be prompted to save the palette to a file.
+		/// </remarks>
+		public EditPaletteDialog(ColorPalette colorPalette)
+		{
+			if(colorPalette == null)
+				throw new ArgumentException("Palette cannot be null.");
+
+			this.promptToSaveFile = false;
+			this.colorPalette = colorPalette;
 			Init();
 		}
 
@@ -170,7 +196,7 @@ namespace WithoutHaste.Windows.GUI
 
 		private void Form_OnClosing(object sender, FormClosingEventArgs e)
 		{
-			if(editedSinceSave)
+			if(promptToSaveFile && editedSinceSave)
 			{
 				DialogResult result = MessageBox.Show("Discard changes to palette since last save?", "Discard Changes", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 				if(result == DialogResult.Cancel)
