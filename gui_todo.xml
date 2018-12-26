@@ -143,6 +143,27 @@
       </Row>
       <Row>
         <Cell>
+          <Data ss:Type="Number">10</Data>
+        </Cell>
+        <Cell ss:StyleID="paragraph">
+          <Data ss:Type="String">add image thumbnail maker
+- shrinks an image down to a MAX SIZE</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Done</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Feature - Minor</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-26T00:00:00.000</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-26T00:00:00.000</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell>
           <Data ss:Type="Number">9</Data>
         </Cell>
         <Cell ss:StyleID="paragraph">
@@ -269,7 +290,7 @@ for Perpetual Paint</Data>
           </Data>
         </Cell>
         <Cell>
-          <Data ss:Type="Number">9</Data>
+          <Data ss:Type="Number">10</Data>
         </Cell>
       </Row>
       <Row>

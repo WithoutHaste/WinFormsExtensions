@@ -31,5 +31,39 @@ namespace WithoutHaste.Windows.GUI
 				}
 			}
 		}
+
+		/// <summary>
+		/// Shrinks an image to fit within <paramref name='maxWidth'/> and <paramref name='maxHeight'/>.
+		/// Keeps aspect ratio the same.
+		/// </summary>
+		/// <returns>Returns a new Bitmap object, even if the image did not need to be resized.</returns>
+		public static Bitmap GetThumbnail(Bitmap bitmap, int maxWidth, int maxHeight)
+		{
+			int width = bitmap.Width;
+			int height = bitmap.Height;
+			if(width <= maxWidth && height <= maxHeight)
+				return new Bitmap(bitmap);
+
+			if(width > maxWidth)
+			{
+				// widthA/heightA = widthB/heightB
+				// heightB = heightA*widthB/widthA
+				height = (height * maxWidth) / width;
+				width = maxWidth;
+			}
+			if(height > maxHeight)
+			{
+				// widthA/heightA = widthB/heightB
+				// widthB = widthA*heightB/heightA
+				width = (width * maxHeight) / height;
+				height = maxHeight;
+			}
+			Bitmap result = new Bitmap(width, height);
+			using(Graphics graphics = Graphics.FromImage(result))
+			{
+				graphics.DrawImage(bitmap, 0, 0, width, height);
+			}
+			return result;
+		}
 	}
 }

@@ -219,6 +219,13 @@
             </summary>
             <param name="fullFilename">Full path and filename to image.</param>
         </member>
+        <member name="M:WithoutHaste.Windows.GUI.ImageHelper.GetThumbnail(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            Shrinks an image to fit within <paramref name='maxWidth'/> and <paramref name='maxHeight'/>.
+            Keeps aspect ratio the same.
+            </summary>
+            <returns>Returns a new Bitmap object, even if the image did not need to be resized.</returns>
+        </member>
         <member name="T:WithoutHaste.Windows.GUI.LayoutHelper">
              <summary>
              Helper for placing and sizing controls in a Form relative to each other.

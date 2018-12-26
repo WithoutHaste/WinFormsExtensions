@@ -7,6 +7,16 @@ Utilities related to image processing.
 
 # Static Methods
 
+## GetThumbnail([System.Drawing.Bitmap](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap) bitmap, int maxWidth, int maxHeight)
+
+**static [System.Drawing.Bitmap](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap)**  
+
+Shrinks an image to fit within _maxWidth_ and _maxHeight_.  
+Keeps aspect ratio the same.  
+
+**Returns:**  
+Returns a new Bitmap object, even if the image did not need to be resized.  
+
 ## SafeLoadBitmap(string fullFilename)
 
 **static [System.Drawing.Bitmap](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap)**  
