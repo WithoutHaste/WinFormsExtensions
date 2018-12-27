@@ -224,6 +224,12 @@ namespace WithoutHaste.Windows.GUI
 			return (new LayoutOptions()).CenterWidth(reference, width);
 		}
 
+		/// <duplicate cref='LayoutOptions.MatchWidth(Control)'/>
+		public static LayoutOptions MatchWidth(Control reference)
+		{
+			return (new LayoutOptions()).MatchWidth(reference);
+		}
+
 		/// <duplicate cref='LayoutOptions.Height(int)'/>
 		public static LayoutOptions Height(int height)
 		{
@@ -234,6 +240,12 @@ namespace WithoutHaste.Windows.GUI
 		public static LayoutOptions CenterHeight(Control reference, int height)
 		{
 			return (new LayoutOptions()).CenterHeight(reference, height);
+		}
+
+		/// <duplicate cref='LayoutOptions.MatchHeight(Control)'/>
+		public static LayoutOptions MatchHeight(Control reference)
+		{
+			return (new LayoutOptions()).MatchHeight(reference);
 		}
 
 

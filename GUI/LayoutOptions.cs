@@ -15,6 +15,16 @@ namespace WithoutHaste.Windows.GUI
 	/// <layout methods="keep_order"/>
 	public class LayoutOptions
 	{
+		/// <summary>Ways of defining a measurement.</summary>
+		public enum MeasureType {
+			/// <summary></summary>
+			None = 0,
+			/// <summary>Measurement is exact.</summary>
+			Absolute,
+			/// <summary>Measurement matches a reference value.</summary>
+			Match,
+		};
+
 		/// <summary>Ways of defining a position relative to another item.</summary>
 		public enum PositionType {
 			/// <summary></summary>
@@ -70,12 +80,16 @@ namespace WithoutHaste.Windows.GUI
 		/// <summary></summary>
 		public Control WidthReference { get; protected set; }
 		/// <summary></summary>
+		public MeasureType WidthType { get; protected set; }
+		/// <summary></summary>
 		public int? WidthMeasure { get; protected set; }
 		/// <summary></summary>
 		public bool WidthCentered { get; protected set; }
 
 		/// <summary></summary>
 		public Control HeightReference { get; protected set; }
+		/// <summary></summary>
+		public MeasureType HeightType { get; protected set; }
 		/// <summary></summary>
 		public int? HeightMeasure { get; protected set; }
 		/// <summary></summary>
@@ -362,6 +376,7 @@ namespace WithoutHaste.Windows.GUI
 		public LayoutOptions Width(int width)
 		{
 			WidthReference = null;
+			WidthType = MeasureType.Absolute;
 			WidthMeasure = width;
 			WidthCentered = false;
 			return this;
@@ -371,8 +386,18 @@ namespace WithoutHaste.Windows.GUI
 		public LayoutOptions CenterWidth(Control reference, int width)
 		{
 			WidthReference = reference;
+			WidthType = MeasureType.Absolute;
 			WidthMeasure = width;
 			WidthCentered = true;
+			return this;
+		}
+
+		/// <summary>Set the width of the control to match the reference.</summary>
+		public LayoutOptions MatchWidth(Control reference)
+		{
+			WidthReference = reference;
+			WidthType = MeasureType.Match;
+			WidthCentered = false;
 			return this;
 		}
 
@@ -380,6 +405,7 @@ namespace WithoutHaste.Windows.GUI
 		public LayoutOptions Height(int height)
 		{
 			HeightReference = null;
+			HeightType = MeasureType.Absolute;
 			HeightMeasure = height;
 			HeightCentered = false;
 			return this;
@@ -389,14 +415,29 @@ namespace WithoutHaste.Windows.GUI
 		public LayoutOptions CenterHeight(Control reference, int height)
 		{
 			HeightReference = reference;
+			HeightType = MeasureType.Absolute;
 			HeightMeasure = height;
 			HeightCentered = true;
+			return this;
+		}
+
+		/// <summary>Set the height of the control to match the reference.</summary>
+		public LayoutOptions MatchHeight(Control reference)
+		{
+			HeightReference = reference;
+			HeightType = MeasureType.Match;
+			HeightCentered = false;
 			return this;
 		}
 
 		/// <summary>Apply settings to control.</summary>
 		public void Apply(Control control)
 		{
+			if(WidthType == MeasureType.Match)
+				WidthMeasure = WidthReference.Width;
+			if(HeightType == MeasureType.Match)
+				HeightMeasure = HeightReference.Height;
+
 			int x = 0;
 			int y = 0;
 			switch(TopPosition)

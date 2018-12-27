@@ -209,6 +209,12 @@ Align with bottom of reference with this margin.
 
 Align with bottom of reference.  
 
+## MatchHeight([System.Windows.Forms.Control](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control) reference)
+
+**static [LayoutOptions](WithoutHaste.Windows.GUI.LayoutOptions.md)**  
+
+Set the height of the control to match the reference.  
+
 ## MatchLeft([System.Windows.Forms.Control](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control) reference, int margin)
 
 **static [LayoutOptions](WithoutHaste.Windows.GUI.LayoutOptions.md)**  
@@ -244,6 +250,12 @@ Align with top of reference with this margin.
 **static [LayoutOptions](WithoutHaste.Windows.GUI.LayoutOptions.md)**  
 
 Align with top of reference.  
+
+## MatchWidth([System.Windows.Forms.Control](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control) reference)
+
+**static [LayoutOptions](WithoutHaste.Windows.GUI.LayoutOptions.md)**  
+
+Set the width of the control to match the reference.  
 
 ## PlaceLeftOf([System.Windows.Forms.Control](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control) control, [System.Windows.Forms.Control](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control) reference)
 

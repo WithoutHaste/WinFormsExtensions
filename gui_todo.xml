@@ -143,6 +143,26 @@
       </Row>
       <Row>
         <Cell>
+          <Data ss:Type="Number">11</Data>
+        </Cell>
+        <Cell ss:StyleID="paragraph">
+          <Data ss:Type="String">LayoutHelper: add MatchWidth and MatchHeight methods</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Done</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Feature - Minor</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-27T00:00:00.000</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-27T00:00:00.000</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell>
           <Data ss:Type="Number">10</Data>
         </Cell>
         <Cell ss:StyleID="paragraph">
@@ -290,7 +310,7 @@ for Perpetual Paint</Data>
           </Data>
         </Cell>
         <Cell>
-          <Data ss:Type="Number">10</Data>
+          <Data ss:Type="Number">11</Data>
         </Cell>
       </Row>
       <Row>

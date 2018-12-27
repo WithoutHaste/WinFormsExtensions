@@ -9,6 +9,13 @@ This object will collect commands for how to position and size a control, and th
 
 # Enums
 
+**[MeasureType](WithoutHaste.Windows.GUI.LayoutOptions.MeasureType.md)**  
+Ways of defining a measurement.  
+
+* 0: None  
+* 1: Absolute  
+* 2: Match  
+
 **[PositionType](WithoutHaste.Windows.GUI.LayoutOptions.PositionType.md)**  
 Ways of defining a position relative to another item.  
 
@@ -43,6 +50,10 @@ Ways of defining a position relative to another item.
 ## HeightReference
 
 **[System.Windows.Forms.Control](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control) { public get; protected set; }**  
+
+## HeightType
+
+**[MeasureType](WithoutHaste.Windows.GUI.LayoutOptions.MeasureType.md) { public get; protected set; }**  
 
 ## LeftMargin
 
@@ -91,6 +102,10 @@ Ways of defining a position relative to another item.
 ## WidthReference
 
 **[System.Windows.Forms.Control](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control) { public get; protected set; }**  
+
+## WidthType
+
+**[MeasureType](WithoutHaste.Windows.GUI.LayoutOptions.MeasureType.md) { public get; protected set; }**  
 
 # Constructors
 
@@ -254,6 +269,12 @@ Align with bottom of reference with this margin.
 
 Align with bottom of reference.  
 
+## MatchHeight([System.Windows.Forms.Control](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control) reference)
+
+**LayoutOptions**  
+
+Set the height of the control to match the reference.  
+
 ## MatchLeft([System.Windows.Forms.Control](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control) reference, int margin)
 
 **LayoutOptions**  
@@ -289,6 +310,12 @@ Align with top of reference with this margin.
 **LayoutOptions**  
 
 Align with top of reference.  
+
+## MatchWidth([System.Windows.Forms.Control](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control) reference)
+
+**LayoutOptions**  
+
+Set the width of the control to match the reference.  
 
 ## Right([System.Windows.Forms.Control](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.control) reference, int margin)
 
@@ -333,6 +360,9 @@ Place at top of reference.
 Set the width of the control directly.  
 
 # Nested Types
+
+[MeasureType](WithoutHaste.Windows.GUI.LayoutOptions.MeasureType.md)  
+Ways of defining a measurement.  
 
 [PositionType](WithoutHaste.Windows.GUI.LayoutOptions.PositionType.md)  
 Ways of defining a position relative to another item.  

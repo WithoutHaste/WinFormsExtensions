@@ -379,11 +379,17 @@
         <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.CenterWidth(System.Windows.Forms.Control,System.Int32)">
             <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.CenterWidth(System.Windows.Forms.Control,System.Int32)'/>
         </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.MatchWidth(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.MatchWidth(System.Windows.Forms.Control)'/>
+        </member>
         <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.Height(System.Int32)">
             <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.Height(System.Int32)'/>
         </member>
         <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.CenterHeight(System.Windows.Forms.Control,System.Int32)">
             <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.CenterHeight(System.Windows.Forms.Control,System.Int32)'/>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutHelper.MatchHeight(System.Windows.Forms.Control)">
+            <duplicate cref='M:WithoutHaste.Windows.GUI.LayoutOptions.MatchHeight(System.Windows.Forms.Control)'/>
         </member>
         <member name="T:WithoutHaste.Windows.GUI.LayoutOptions">
             <summary>
@@ -391,6 +397,18 @@
             </summary>
             <remarks>This object will collect commands for how to position and size a control, and then apply those commands all at once.</remarks>
             <layout methods="keep_order"/>
+        </member>
+        <member name="T:WithoutHaste.Windows.GUI.LayoutOptions.MeasureType">
+            <summary>Ways of defining a measurement.</summary>
+        </member>
+        <member name="F:WithoutHaste.Windows.GUI.LayoutOptions.MeasureType.None">
+            <summary></summary>
+        </member>
+        <member name="F:WithoutHaste.Windows.GUI.LayoutOptions.MeasureType.Absolute">
+            <summary>Measurement is exact.</summary>
+        </member>
+        <member name="F:WithoutHaste.Windows.GUI.LayoutOptions.MeasureType.Match">
+            <summary>Measurement matches a reference value.</summary>
         </member>
         <member name="T:WithoutHaste.Windows.GUI.LayoutOptions.PositionType">
             <summary>Ways of defining a position relative to another item.</summary>
@@ -457,6 +475,9 @@
         <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.WidthReference">
             <summary></summary>
         </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.WidthType">
+            <summary></summary>
+        </member>
         <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.WidthMeasure">
             <summary></summary>
         </member>
@@ -464,6 +485,9 @@
             <summary></summary>
         </member>
         <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.HeightReference">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.HeightType">
             <summary></summary>
         </member>
         <member name="P:WithoutHaste.Windows.GUI.LayoutOptions.HeightMeasure">
@@ -583,11 +607,17 @@
         <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.CenterWidth(System.Windows.Forms.Control,System.Int32)">
             <summary>Set the width of the control directly and specify that it should be horizontal-centered in its parent.</summary>
         </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.MatchWidth(System.Windows.Forms.Control)">
+            <summary>Set the width of the control to match the reference.</summary>
+        </member>
         <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Height(System.Int32)">
             <summary>Set the height of the control directly.</summary>
         </member>
         <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.CenterHeight(System.Windows.Forms.Control,System.Int32)">
             <summary>Set the height of the control directly and specify that it should be vertical-centered in its parent.</summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.MatchHeight(System.Windows.Forms.Control)">
+            <summary>Set the height of the control to match the reference.</summary>
         </member>
         <member name="M:WithoutHaste.Windows.GUI.LayoutOptions.Apply(System.Windows.Forms.Control)">
             <summary>Apply settings to control.</summary>
