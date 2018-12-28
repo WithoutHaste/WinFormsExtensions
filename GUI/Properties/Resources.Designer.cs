@@ -63,6 +63,16 @@ namespace WithoutHaste.Windows.GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ICON_ADD {
+            get {
+                object obj = ResourceManager.GetObject("ICON_ADD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ICON_DROPPER {
             get {
                 object obj = ResourceManager.GetObject("ICON_DROPPER", resourceCulture);
@@ -73,9 +83,69 @@ namespace WithoutHaste.Windows.GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ICON_NEW {
+            get {
+                object obj = ResourceManager.GetObject("ICON_NEW", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ICON_NEW_FILE {
+            get {
+                object obj = ResourceManager.GetObject("ICON_NEW_FILE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ICON_NEW_FOLDER {
+            get {
+                object obj = ResourceManager.GetObject("ICON_NEW_FOLDER", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ICON_OPEN_FILE {
+            get {
+                object obj = ResourceManager.GetObject("ICON_OPEN_FILE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ICON_REDO {
             get {
                 object obj = ResourceManager.GetObject("ICON_REDO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ICON_SAVE {
+            get {
+                object obj = ResourceManager.GetObject("ICON_SAVE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ICON_SAVE_RED {
+            get {
+                object obj = ResourceManager.GetObject("ICON_SAVE_RED", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

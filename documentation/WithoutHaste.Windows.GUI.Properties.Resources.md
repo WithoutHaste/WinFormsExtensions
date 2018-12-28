@@ -13,13 +13,55 @@ A strongly-typed resource class, for looking up localized strings, etc.
 Overrides the current thread's CurrentUICulture property for all  
 resource lookups using this strongly typed resource class.  
 
+## ICON_ADD
+
+**[System.Drawing.Bitmap](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap) { protected get; }**  
+
+Looks up a localized resource of type System.Drawing.Bitmap.  
+
 ## ICON_DROPPER
 
 **[System.Drawing.Bitmap](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap) { protected get; }**  
 
 Looks up a localized resource of type System.Drawing.Bitmap.  
 
+## ICON_NEW
+
+**[System.Drawing.Bitmap](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap) { protected get; }**  
+
+Looks up a localized resource of type System.Drawing.Bitmap.  
+
+## ICON_NEW_FILE
+
+**[System.Drawing.Bitmap](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap) { protected get; }**  
+
+Looks up a localized resource of type System.Drawing.Bitmap.  
+
+## ICON_NEW_FOLDER
+
+**[System.Drawing.Bitmap](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap) { protected get; }**  
+
+Looks up a localized resource of type System.Drawing.Bitmap.  
+
+## ICON_OPEN_FILE
+
+**[System.Drawing.Bitmap](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap) { protected get; }**  
+
+Looks up a localized resource of type System.Drawing.Bitmap.  
+
 ## ICON_REDO
+
+**[System.Drawing.Bitmap](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap) { protected get; }**  
+
+Looks up a localized resource of type System.Drawing.Bitmap.  
+
+## ICON_SAVE
+
+**[System.Drawing.Bitmap](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap) { protected get; }**  
+
+Looks up a localized resource of type System.Drawing.Bitmap.  
+
+## ICON_SAVE_RED
 
 **[System.Drawing.Bitmap](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap) { protected get; }**  
 

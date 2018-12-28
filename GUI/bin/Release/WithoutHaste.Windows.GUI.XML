@@ -118,6 +118,27 @@
         <member name="P:WithoutHaste.Windows.GUI.IconManager.DROPPER">
             <summary>Eye dropper tool.</summary>
         </member>
+        <member name="P:WithoutHaste.Windows.GUI.IconManager.ADD">
+            <summary>Add or plus sign.</summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.IconManager.OPEN_FILE">
+            <summary>An open folder.</summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.IconManager.SAVE">
+            <summary>A floppy disk.</summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.IconManager.SAVE_RED">
+            <summary>A red floppy disk.</summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.IconManager.NEW">
+            <summary>Star-burst or poof sign.</summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.IconManager.NEW_FOLDER">
+            <summary>An open folder with a star-burst sign.</summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.IconManager.NEW_FILE">
+            <summary>A document with a star-burst sign.</summary>
+        </member>
         <member name="T:WithoutHaste.Windows.GUI.NewColorDialog">
              <summary>Color picker dialog for selecting a System.Drawing.Color.</summary>
              <example>
@@ -638,12 +659,47 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_ADD">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_DROPPER">
             <summary>
               Looks up a localized resource of type System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_NEW">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_NEW_FILE">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_NEW_FOLDER">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_OPEN_FILE">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_REDO">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_SAVE">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Windows.GUI.Properties.Resources.ICON_SAVE_RED">
             <summary>
               Looks up a localized resource of type System.Drawing.Bitmap.
             </summary>
