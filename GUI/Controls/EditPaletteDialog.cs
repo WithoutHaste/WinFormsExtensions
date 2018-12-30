@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WithoutHaste.Drawing.Colors;
 
+//for Copy From Screen
+using System.ComponentModel;
+using System.Data;
+using System.Threading;
+
 namespace WithoutHaste.Windows.GUI
 {
 	/// <summary>
@@ -33,6 +38,7 @@ namespace WithoutHaste.Windows.GUI
 		private ColorDataPanel colorDataPanel;
 		private bool editedSinceSave;
 		private History history;
+		//private bool CopyMode = false;
 
 		/// <summary>Location of color palette file, including full path + filename + extension.</summary>
 		/// <remarks>If palette is saved to a new location, this property will have the new location after the dialog closes.</remarks>
@@ -93,6 +99,8 @@ namespace WithoutHaste.Windows.GUI
 			this.Height = 500;
 			this.Text = "Edit Palette";
 			this.FormClosing += new FormClosingEventHandler(Form_OnClosing);
+			//this.MouseLeave += new EventHandler(Form_OnMouseLeave);
+			//this.MouseEnter += new EventHandler(Form_OnMouseEnter);
 
 			InitControls();
 			InitMenus();
@@ -107,6 +115,8 @@ namespace WithoutHaste.Windows.GUI
 			toolStrip.Dock = DockStyle.Top;
 			toolStrip.Items.Add("Undo", IconManager.UNDO, Form_OnUndo);
 			toolStrip.Items.Add("Redo", IconManager.REDO, Form_OnRedo);
+			//toolStrip.Items.Add(new ToolStripSeparator());
+			//toolStrip.Items.Add("Copy", IconManager.DROPPER, Form_OnCopy);
 			this.Controls.Add(toolStrip);
 
 			Button addButton = new Button();
@@ -164,11 +174,13 @@ namespace WithoutHaste.Windows.GUI
 			MenuItem undoAction = new MenuItem("Undo", new EventHandler(Form_OnUndo), Shortcut.CtrlZ);
 			MenuItem redoAction = new MenuItem("Redo", new EventHandler(Form_OnRedo), Shortcut.CtrlY);
 			MenuItem newColor = new MenuItem("New Color", new EventHandler(Form_OnAdd), Shortcut.CtrlN);
+			//MenuItem copyColor = new MenuItem("Copy Color from Screen", new EventHandler(Form_OnCopy), Shortcut.CtrlC);
 			MenuItem savePalette = new MenuItem("Save Palette", new EventHandler(Form_OnSave), Shortcut.CtrlS);
 			MenuItem saveAsPalette = new MenuItem("Save Palette As", new EventHandler(Form_OnSaveAs), Shortcut.F12);
 			editMenu.MenuItems.Add(undoAction);
 			editMenu.MenuItems.Add(redoAction);
 			editMenu.MenuItems.Add(newColor);
+			//editMenu.MenuItems.Add(copyColor);
 			editMenu.MenuItems.Add(savePalette);
 			editMenu.MenuItems.Add(saveAsPalette);
 			editMenu.Visible = false;
@@ -216,18 +228,16 @@ namespace WithoutHaste.Windows.GUI
 				dialog.Location = new Point(this.Location.X + 30, this.Location.Y + 30);
 				if(dialog.ShowDialog() == DialogResult.OK)
 				{
-					Color newColor = dialog.Color;
-					int index = colorPalette.Count;
-					AddColorToPalette(newColor, index);
-
-					AddPaletteColorAction action = new AddPaletteColorAction(newColor, index);
-					action.InsertColor += new PaletteEventHandler(Palette_OnAddColor);
-					action.RemoveColor += new PaletteEventHandler(Palette_OnRemoveColor);
-					history.Add(action);
+					AddColorToPaletteWithHistory(dialog.Color);
 				}
 			}
 		}
-
+/*
+		private void Form_OnCopy(object sender, EventArgs e)
+		{
+			CopyMode = true;
+		}
+*/
 		private void Form_OnSaveAs(object sender, EventArgs e)
 		{
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -336,6 +346,17 @@ namespace WithoutHaste.Windows.GUI
 			editedSinceSave = false;
 		}
 
+		private void AddColorToPaletteWithHistory(Color color)
+		{
+			int index = colorPalette.Count;
+			AddColorToPalette(color, index);
+
+			AddPaletteColorAction action = new AddPaletteColorAction(color, index);
+			action.InsertColor += new PaletteEventHandler(Palette_OnAddColor);
+			action.RemoveColor += new PaletteEventHandler(Palette_OnRemoveColor);
+			history.Add(action);
+		}
+
 		private void AddColorToPalette(Color color, int index)
 		{
 			colorPalette.Insert(color, index);
@@ -366,5 +387,60 @@ namespace WithoutHaste.Windows.GUI
 		{
 			history.Clear();
 		}
+
+		#region Copy From Screen
+		/*
+		private Mutex checkingForClick = new Mutex(false);
+		private AutoResetEvent autoResetEvent = new AutoResetEvent(false);
+
+		private void Form_OnMouseLeave(object sender, EventArgs e)
+		{
+			if(CopyMode)
+			{
+				StartWaitingForClickFromOutside();
+			}
+		}
+
+		private void StartWaitingForClickFromOutside()
+		{
+			if(checkingForClick.WaitOne(10))
+			{
+				SynchronizationContext context = new SynchronizationContext();
+				autoResetEvent.Reset();
+
+				Task.Factory.StartNew(() => {
+					while(true)
+					{
+						if(autoResetEvent.WaitOne(1))
+						{
+							break;
+						}
+						if(MouseButtons == MouseButtons.Left)
+						{
+							context.Send(ClickFromOutside, new Point(MousePosition.X, MousePosition.Y));
+							break;
+						}
+					}
+
+					checkingForClick.ReleaseMutex();
+				});
+			}
+		}
+
+		private void ClickFromOutside(object state)
+		{
+			CopyMode = false;
+			Color color = ImageHelper.GetColorFromScreen((Point)state);
+			MessageBox.Show("added color: " + color.ToString());
+			//MessageBox.Show("already have " + colorPalette.Count + " colors");
+			//AddColorToPaletteWithHistory(color);
+		}
+
+		private void Form_OnMouseEnter(object sender, EventArgs e)
+		{
+			autoResetEvent.Set();
+		}
+		*/
+		#endregion
 	}
 }

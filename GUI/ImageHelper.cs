@@ -6,6 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//for getting pixel from screen
+using System.Drawing.Imaging;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using System.Diagnostics;
+
 namespace WithoutHaste.Windows.GUI
 {
 	/// <summary>
@@ -64,6 +70,39 @@ namespace WithoutHaste.Windows.GUI
 				graphics.DrawImage(bitmap, 0, 0, width, height);
 			}
 			return result;
+		}
+
+		/// <summary>
+		/// Used by <see cref='GetColorFromScreen(Point)'/>.
+		/// </summary>
+		[DllImport("user32.dll")]
+		static extern bool GetCursorPos(ref Point lpPoint);
+
+		/// <summary>
+		/// Used by <see cref='GetColorFromScreen(Point)'/>.
+		/// </summary>
+		[DllImport("gdi32.dll", CharSet = CharSet.Auto, SetLastError = true, ExactSpelling = true)]
+		public static extern int BitBlt(IntPtr hDC, int x, int y, int nWidth, int nHeight, IntPtr hSrcDC, int xSrc, int ySrc, int dwRop);
+
+		/// <summary>
+		/// Returns the color of a pixel from the screen.
+		/// </summary>
+		public static Color GetColorFromScreen(Point location)
+		{
+			Bitmap screenPixel = new Bitmap(1, 1, PixelFormat.Format32bppArgb);
+			using(Graphics gdest = Graphics.FromImage(screenPixel))
+			{
+				using(Graphics gsrc = Graphics.FromHwnd(IntPtr.Zero))
+				{
+					IntPtr hSrcDC = gsrc.GetHdc();
+					IntPtr hDC = gdest.GetHdc();
+					int retval = BitBlt(hDC, 0, 0, 1, 1, hSrcDC, location.X, location.Y, (int)CopyPixelOperation.SourceCopy);
+					gdest.ReleaseHdc();
+					gsrc.ReleaseHdc();
+				}
+			}
+
+			return screenPixel.GetPixel(0, 0);
 		}
 	}
 }

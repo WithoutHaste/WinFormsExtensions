@@ -7,6 +7,18 @@ Utilities related to image processing.
 
 # Static Methods
 
+## BitBlt([IntPtr](https://docs.microsoft.com/en-us/dotnet/api/system.intptr) hDC, int x, int y, int nWidth, int nHeight, [IntPtr](https://docs.microsoft.com/en-us/dotnet/api/system.intptr) hSrcDC, int xSrc, int ySrc, int dwRop)
+
+**static int**  
+
+Used by [GetColorFromScreen(System.Drawing.Point)](WithoutHaste.Windows.GUI.ImageHelper.md).  
+
+## GetColorFromScreen([System.Drawing.Point](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.point) location)
+
+**static [System.Drawing.Color](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color)**  
+
+Returns the color of a pixel from the screen.  
+
 ## GetThumbnail([System.Drawing.Bitmap](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap) bitmap, int maxWidth, int maxHeight)
 
 **static [System.Drawing.Bitmap](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap)**  

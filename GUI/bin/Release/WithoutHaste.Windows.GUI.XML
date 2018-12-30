@@ -247,6 +247,21 @@
             </summary>
             <returns>Returns a new Bitmap object, even if the image did not need to be resized.</returns>
         </member>
+        <member name="M:WithoutHaste.Windows.GUI.ImageHelper.GetCursorPos(System.Drawing.Point@)">
+            <summary>
+            Used by <see cref='M:WithoutHaste.Windows.GUI.ImageHelper.GetColorFromScreen(System.Drawing.Point)'/>.
+            </summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.ImageHelper.BitBlt(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.IntPtr,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Used by <see cref='M:WithoutHaste.Windows.GUI.ImageHelper.GetColorFromScreen(System.Drawing.Point)'/>.
+            </summary>
+        </member>
+        <member name="M:WithoutHaste.Windows.GUI.ImageHelper.GetColorFromScreen(System.Drawing.Point)">
+            <summary>
+            Returns the color of a pixel from the screen.
+            </summary>
+        </member>
         <member name="T:WithoutHaste.Windows.GUI.LayoutHelper">
              <summary>
              Helper for placing and sizing controls in a Form relative to each other.
