@@ -7,7 +7,7 @@ using WithoutHaste.Windows.GUI;
 namespace GUITest
 {
 	[TestClass]
-	public class TestLayoutHelper
+	public class LayoutHelperTests
 	{
 		[TestMethod]
 		public void LayoutHelper_CenterWidth()

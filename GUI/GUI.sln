@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI.csproj", "{1F15F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUITest", "..\GUITest\GUITest.csproj", "{9DD55D84-3D95-4EE0-ABBC-65FDC8FB3F05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUIDialogTest", "..\GUIDialogTest\GUIDialogTest.csproj", "{79B10295-ECE6-4C50-9112-79B43B1A862E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9DD55D84-3D95-4EE0-ABBC-65FDC8FB3F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DD55D84-3D95-4EE0-ABBC-65FDC8FB3F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DD55D84-3D95-4EE0-ABBC-65FDC8FB3F05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79B10295-ECE6-4C50-9112-79B43B1A862E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79B10295-ECE6-4C50-9112-79B43B1A862E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79B10295-ECE6-4C50-9112-79B43B1A862E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79B10295-ECE6-4C50-9112-79B43B1A862E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
