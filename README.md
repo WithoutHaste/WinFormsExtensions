@@ -4,8 +4,6 @@ A C# library for Windows Forms extensions.
 - Behavior extensions
 - Custom controls
 
-This library is under active development. Report bugs and request features on Github, or to wohaste@gmail.com.
-
 ## Download
 
 Release library at WithoutHaste.Windows.GUI/bin/Release/WithoutHaste.Windows.GUI.dll.
